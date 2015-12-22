@@ -1,0 +1,243 @@
+/*
+ Theme Name:   Maisha Child
+ Theme URI:    http://www.anarieldesign.com/themes/
+ Description:  Maisha Child Theme
+ Author:       Anariel Design
+ Author URI:   http://www.anarieldesign.com/
+ Template:     maishawp
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         black, orange, white, gray, dark, light, two-columns, left-sidebar, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
+*/
+
+
+/**
+ * Mixins
+ */
+.clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/* Color */
+@colorRoyal: rgb(70,87,156);
+@colorBlue: rgb(75,119,190);
+@colorWhite: rgb(255,255,255);
+@colorYellow: rgb(255,195,37);
+@colorGray: rgb(98,100,104);
+@colorGrayDarker: rgb(42, 44, 46);
+
+/*  Little dot on home page banner */
+.color {
+    color: #f5d151;
+}
+.footer {
+    background: @colorYellow;
+}
+
+.button,
+.search-toggle {
+    color: #FFF !important;
+    background: @colorRoyal;
+}
+.social-navigation {
+    background: @colorRoyal;
+}
+
+.site-branding {
+    width: 250px;
+}
+
+
+/**
+ * Soliliquy Slider
+ */
+#soliloquy-container- {
+    max-height: 456px !important;
+}
+.soliloquy-caption {
+    width: 40% !important;
+    top: 80px !important;
+    left: 80px !important;
+}
+.soliloquy-caption-inside {
+    height: 250px !important;
+    text-align: left !important;
+    padding: 20px !important;
+}
+.page-template-front-page-one .soliloquy-container h1 {
+    color: #f5d151 !important;
+    letter-spacing: 0px !important;
+    line-height: 1.2 !important;
+}
+.page-template-front-page-one .soliloquy-container p {
+    line-height: 1.5 !important;
+    margin: 10px 0;
+}
+
+
+/**
+ * General
+ */
+*, *:before, *:after {
+     box-sizing: inherit;
+ }
+html {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Raleway", sans-serif;
+}
+.site-header {
+    background: rgba(255,255,255,0.8);
+}
+
+
+/**
+ *  Layout
+ */
+.section {
+    padding: 10% 10% 0 10%;
+    .section-title {
+        font-size: 35px;
+        text-transform: uppercase;
+    }
+}
+
+/* Squad: Four up or more team of divs */
+.squad {
+    .clearfix();
+    .member {
+        position: relative;
+        width: 35vw;
+        height: 35vw;
+        margin-left: 10%;
+        margin-bottom: 10%;
+        float: left;
+        overflow: hidden;
+        &:nth-child(2n+1) {
+            margin-left: 0;
+        }
+        img {
+            height: 100%;
+            max-width: none;
+            width: auto;
+            position: absolute;
+        }
+        .content {
+            position: relative;
+            color: @colorWhite;
+            background: fadeout(@colorRoyal, 10%);
+            z-index: 2;
+            height: 100%;
+            width: 100%;
+            padding: 30px;
+            h1 {
+                font-size: 3vw;
+                text-transform: uppercase;
+                text-align: center;
+                color: @colorWhite;
+                &:after {
+                    content: " ";
+                    display: block;
+                    width: 40px;
+                    height: 5px;
+                    margin: 0 auto;
+                    background: @colorWhite;
+                }
+            }
+            a.more-link {
+                color: #FFF;
+                background: @colorYellow;
+            }
+        }
+    }
+}
+
+/* Latest News */
+.latest-news-container {
+    padding: 0 10% 10% 10%;
+}
+
+
+/**
+ * Home
+ */
+body.home .soliloquy-container {
+    margin-top: 69px !important;
+    margin-bottom: 0 !important;
+}
+body.home .second-block .block-two {
+    padding: 0;
+}
+body.home .voter-voice.strip-cta {
+    color: @colorGray;
+    background: @colorYellow;
+    padding: 20px;
+    .clearfix();
+    .voter-voice-icon {
+        float: left;
+        margin-right: 20px;
+    }
+    .voter-voice-content {
+        float: left;
+        max-width: 80%;
+        .voter-voice-text {
+            margin-bottom: 0;
+        }
+    }
+    .button {
+        float: right;
+    }
+}
+
+
+/**
+ * Site Logo
+ */
+.site-logo {
+    width: 300px;
+    margin-bottom: 30px;
+    /*padding: 20px;
+    margin-bottom: -90px;
+    background: #FFF;
+    max-width: 230px;
+    z-index: 9;*/
+}
+
+/**
+ * Search Toggle
+ */
+ @media screen and (max-width: 59.6875em) {
+     .search-toggle, .fixed .search-toggle {
+         z-index: 1;
+     }
+ }
+
+/**
+ * Intro Image
+ */
+.intro, .aboutpage {
+    margin-top: 72px;
+}
+
+/**
+ * Footer
+ */
+.copyright {
+    border-top: none;
+}
+footer#colophon a {
+    color: rgb(0,126,195);
+}
+
+#social-navigation a {
+    color: #FFF !important;
+}

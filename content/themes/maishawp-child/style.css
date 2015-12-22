@@ -10,3 +10,212 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         black, orange, white, gray, dark, light, two-columns, left-sidebar, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
 */
+/**
+ * Mixins
+ */
+/* Color */
+/*  Little dot on home page banner */
+.color {
+  color: #f5d151;
+}
+.footer {
+  background: #ffc325;
+}
+.button,
+.search-toggle {
+  color: #FFF !important;
+  background: #46579c;
+}
+.social-navigation {
+  background: #46579c;
+}
+.site-branding {
+  width: 250px;
+}
+/**
+ * Soliliquy Slider
+ */
+#soliloquy-container- {
+  max-height: 456px !important;
+}
+.soliloquy-caption {
+  width: 40% !important;
+  top: 80px !important;
+  left: 80px !important;
+}
+.soliloquy-caption-inside {
+  height: 250px !important;
+  text-align: left !important;
+  padding: 20px !important;
+}
+.page-template-front-page-one .soliloquy-container h1 {
+  color: #f5d151 !important;
+  letter-spacing: 0px !important;
+  line-height: 1.2 !important;
+}
+.page-template-front-page-one .soliloquy-container p {
+  line-height: 1.5 !important;
+  margin: 10px 0;
+}
+/**
+ * General
+ */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Raleway", sans-serif;
+}
+.site-header {
+  background: rgba(255, 255, 255, 0.8);
+}
+/**
+ *  Layout
+ */
+.section {
+  padding: 10% 10% 0 10%;
+}
+.section .section-title {
+  font-size: 35px;
+  text-transform: uppercase;
+}
+/* Squad: Four up or more team of divs */
+.squad:before,
+.squad:after {
+  content: " ";
+  display: table;
+}
+.squad:after {
+  clear: both;
+}
+.squad .member {
+  position: relative;
+  width: 35vw;
+  height: 35vw;
+  margin-left: 10%;
+  margin-bottom: 10%;
+  float: left;
+  overflow: hidden;
+}
+.squad .member:nth-child(2n+1) {
+  margin-left: 0;
+}
+.squad .member img {
+  height: 100%;
+  max-width: none;
+  width: auto;
+  position: absolute;
+}
+.squad .member .content {
+  position: relative;
+  color: #ffffff;
+  background: rgba(70, 87, 156, 0.9);
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+}
+.squad .member .content h1 {
+  font-size: 3vw;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+.squad .member .content h1:after {
+  content: " ";
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+.squad .member .content a.more-link {
+  color: #FFF;
+  background: #ffc325;
+}
+/* Latest News */
+.latest-news-container {
+  padding: 0 10% 10% 10%;
+}
+/**
+ * Home
+ */
+body.home .soliloquy-container {
+  margin-top: 69px !important;
+  margin-bottom: 0 !important;
+}
+body.home .second-block .block-two {
+  padding: 0;
+}
+body.home .voter-voice.strip-cta {
+  color: #626468;
+  background: #ffc325;
+  padding: 20px;
+}
+body.home .voter-voice.strip-cta:before,
+body.home .voter-voice.strip-cta:after {
+  content: " ";
+  display: table;
+}
+body.home .voter-voice.strip-cta:after {
+  clear: both;
+}
+body.home .voter-voice.strip-cta .voter-voice-icon {
+  float: left;
+  margin-right: 20px;
+}
+body.home .voter-voice.strip-cta .voter-voice-content {
+  float: left;
+  max-width: 80%;
+}
+body.home .voter-voice.strip-cta .voter-voice-content .voter-voice-text {
+  margin-bottom: 0;
+}
+body.home .voter-voice.strip-cta .button {
+  float: right;
+}
+/**
+ * Site Logo
+ */
+.site-logo {
+  width: 300px;
+  margin-bottom: 30px;
+  /*padding: 20px;
+    margin-bottom: -90px;
+    background: #FFF;
+    max-width: 230px;
+    z-index: 9;*/
+}
+/**
+ * Search Toggle
+ */
+@media screen and (max-width: 59.6875em) {
+  .search-toggle,
+  .fixed .search-toggle {
+    z-index: 1;
+  }
+}
+/**
+ * Intro Image
+ */
+.intro,
+.aboutpage {
+  margin-top: 72px;
+}
+/**
+ * Footer
+ */
+.copyright {
+  border-top: none;
+}
+footer#colophon a {
+  color: #007ec3;
+}
+#social-navigation a {
+  color: #FFF !important;
+}
