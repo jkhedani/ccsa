@@ -55,14 +55,18 @@ get_header(); ?>
     <!-- Featured Pages -->
     <?php $posts = get_field('featured_pages'); ?>
     <?php if( $posts ): ?>
-        <div class="featured-pages section">
+        <div class="featured-pages">
             <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
                 <?php setup_postdata($post); ?>
-                <div class="member">
+                <div class="featured-page">
+                    <a class="featured-page-title" href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
                     <?php the_post_thumbnail(); ?>
-                    <div class="content">
-                        <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-                        <?php the_content(); ?>
+                    <div class="featured-page-content">
+                        <?php
+                            global $more;    // Declare global $more (before the loop).
+                            $more = 1;       // Set (inside the loop) to display all content, including text below more.
+                            the_content();
+                        ?>
                     </div>
                 </div>
             <?php endforeach; ?>

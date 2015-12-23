@@ -99,6 +99,38 @@ body {
     background: rgba(255,255,255,0.8);
 }
 
+/**
+ * Staff Hack!
+ */
+body.page-template-staff-page {
+    .entry-content {
+        p {
+            display: none;
+        }
+    }
+}
+
+
+/**
+ * Featured Pages
+ */
+.featured-pages {
+    .featured-page {
+        margin: 25px 0;
+        .featured-page-title {
+            display: block;
+            font-size: 27px;
+            text-align: center;
+            color: @colorGrayDarker;
+            // background: @colorYellow;
+            padding: 15px;
+        }
+        .featured-page-content {
+            padding: 20px;
+        }
+    }
+}
+
 
 /**
  *  Layout
@@ -188,7 +220,7 @@ body.home .voter-voice.strip-cta {
     }
     .voter-voice-content {
         float: left;
-        max-width: 80%;
+        max-width: 70%;
         .voter-voice-text {
             margin-bottom: 0;
         }
@@ -198,6 +230,17 @@ body.home .voter-voice.strip-cta {
     }
 }
 
+/**
+ * Blog
+ */
+body.blog {
+    .aboutpage {
+        display: none;
+    }
+    .byline {
+        display: none;
+    }
+}
 
 /**
  * Site Logo
