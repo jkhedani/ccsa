@@ -56,12 +56,14 @@ get_header(); ?>
     <?php $posts = get_field('featured_pages'); ?>
     <?php if( $posts ): ?>
         <div class="featured-pages">
-            <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+            <?php foreach( $posts as $index=>$post): // variable must be called $post (IMPORTANT) ?>
                 <?php setup_postdata($post); ?>
-                <div class="featured-page">
-                    <a class="featured-page-title" href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-                    <?php the_post_thumbnail(); ?>
+                <div class="featured-page <?php if ( $index % 2 === 0 ) { echo "left"; } else { echo "right"; } ?>">
+                    <div class="featured-page-image">
+                        <?php the_post_thumbnail(); ?>
+                    </div>
                     <div class="featured-page-content">
+                        <h1><?php the_title(); ?></h1>
                         <?php
                             global $more;    // Declare global $more (before the loop).
                             $more = 1;       // Set (inside the loop) to display all content, including text below more.
@@ -73,5 +75,26 @@ get_header(); ?>
         </div>
         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
     <?php endif; ?>
+
+    <!-- Our Team Teaser -->
+    <?php
+        $staffPages = new WP_Query(array(
+            'post_type' => 'page',
+            'post_parent' => 412 // Our Team page
+        ));
+    ?>
+    <div class="footer-teaser">
+        <div class="teaser-content">
+            <h2>Our Team</h2>
+            <p>Meet the passionate organizers working for California students and families.</p>
+            <a class="<?php echo site_url('/our-team/'); ?>">Check our team</a>
+        </div>
+        <div class="teaser-image">
+            <?php while ($staffPages->have_posts()) : $staffPages->the_post(); ?>
+                <?php the_post_thumbnail(); ?>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        </div>
+    </div>
 
 <?php get_footer(); ?>

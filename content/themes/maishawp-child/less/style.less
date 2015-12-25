@@ -31,6 +31,7 @@
 @colorBlue: rgb(75,119,190);
 @colorWhite: rgb(255,255,255);
 @colorYellow: rgb(255,195,37);
+@colorGrayLighter: rgb(244,244,244);
 @colorGray: rgb(98,100,104);
 @colorGrayDarker: rgb(42, 44, 46);
 
@@ -47,14 +48,34 @@
     color: #FFF !important;
     background: @colorRoyal;
 }
-.social-navigation {
-    background: @colorRoyal;
-}
 
 .site-branding {
     width: 250px;
 }
 
+/**
+ * Navigation
+ */
+.navigation-main  {
+    a {
+        padding: 10px;
+    }
+    ul li.menu-item-has-children > a:after {
+        display: none;
+    }
+    // Subscribe Button
+    li#menu-item-537 {
+        border: 1px solid @colorGray;
+    }
+}
+.subscribe-form {
+    background: @colorRoyal;
+    height: 0;
+    transition: all 1.0s ease;
+    form {
+        display: none;
+    }
+}
 
 /**
  * Soliliquy Slider
@@ -110,6 +131,12 @@ body.page-template-staff-page {
     }
 }
 
+/**
+ * Header
+ */
+.site-header {
+    transition: all 1.0s ease;
+}
 
 /**
  * Featured Pages
@@ -195,7 +222,7 @@ body.page-template-staff-page {
 
 /* Latest News */
 .latest-news-container {
-    padding: 0 10% 10% 10%;
+    padding: 10% 10% 10% 10%;
 }
 
 
@@ -210,8 +237,8 @@ body.home .second-block .block-two {
     padding: 0;
 }
 body.home .voter-voice.strip-cta {
-    color: @colorGray;
-    background: @colorYellow;
+    color: #FFF;
+    background: @colorGrayDarker;
     padding: 20px;
     .clearfix();
     .voter-voice-icon {
@@ -227,6 +254,56 @@ body.home .voter-voice.strip-cta {
     }
     .button {
         float: right;
+        background: @colorYellow;
+    }
+}
+
+/**
+ * About Page
+ */
+body.page-template-about-page {
+    .featured-pages {
+        .featured-page {
+            .clearfix();
+            margin: 40px auto;
+            h1 {
+                text-align: left;
+                margin-top: 0;
+            }
+            .featured-page-image {
+                width: 40%;
+            }
+            .featured-page-content {
+                width: 60%;
+                padding: 20px;
+            }
+            &.left {
+                .featured-page-image {
+                    float: left;
+                    width: 40%;
+                }
+                .featured-page-content {
+                    float: right;
+                    width: 60%;
+                    padding: 20px;
+                }
+            }
+            &.right {
+                .featured-page-image {
+                    float: right;
+                    width: 40%;
+                }
+                .featured-page-content {
+                    float: left;
+                    width: 60%;
+                }
+            }
+        }
+    }
+    // Our Team Teaser
+    .footer-teaser {
+        padding: 30px;
+        background: @colorGrayLighter;
     }
 }
 
@@ -256,6 +333,25 @@ body.blog {
 }
 
 /**
+ * Social Nav
+ */
+ .social-navigation {
+    //  position: fixed;
+    //  top: 0;
+    //  right: 86px;
+    //  bottom: auto;
+     background: @colorRoyal;
+     padding: 5px 5px 0 5px;
+    //  z-index: 202;
+     li {
+        //  display: inline-block;
+         a {
+             color: #FFF !important;
+         }
+     }
+ }
+
+/**
  * Search Toggle
  */
  @media screen and (max-width: 59.6875em) {
@@ -275,12 +371,20 @@ body.blog {
  * Footer
  */
 .copyright {
+    color: @colorGray;
     border-top: none;
 }
-footer#colophon a {
-    color: rgb(0,126,195);
+.footer .widget {
+    color: @colorGray;
 }
-
-#social-navigation a {
-    color: #FFF !important;
+footer#colophon  {
+    .site-info {
+        padding-top: 40px;
+    }
+    a {
+        color: rgb(0,126,195);
+    }
+    h3 {
+        display: none;
+    }
 }

@@ -26,11 +26,28 @@
   color: #FFF !important;
   background: #46579c;
 }
-.social-navigation {
-  background: #46579c;
-}
 .site-branding {
   width: 250px;
+}
+/**
+ * Navigation
+ */
+.navigation-main a {
+  padding: 10px;
+}
+.navigation-main ul li.menu-item-has-children > a:after {
+  display: none;
+}
+.navigation-main li#menu-item-537 {
+  border: 1px solid #626468;
+}
+.subscribe-form {
+  background: #46579c;
+  height: 0;
+  transition: all 1.0s ease;
+}
+.subscribe-form form {
+  display: none;
 }
 /**
  * Soliliquy Slider
@@ -79,6 +96,12 @@ body {
  */
 body.page-template-staff-page .entry-content p {
   display: none;
+}
+/**
+ * Header
+ */
+.site-header {
+  transition: all 1.0s ease;
 }
 /**
  * Featured Pages
@@ -162,7 +185,7 @@ body.page-template-staff-page .entry-content p {
 }
 /* Latest News */
 .latest-news-container {
-  padding: 0 10% 10% 10%;
+  padding: 10% 10% 10% 10%;
 }
 /**
  * Home
@@ -175,8 +198,8 @@ body.home .second-block .block-two {
   padding: 0;
 }
 body.home .voter-voice.strip-cta {
-  color: #626468;
-  background: #ffc325;
+  color: #FFF;
+  background: #2a2c2e;
   padding: 20px;
 }
 body.home .voter-voice.strip-cta:before,
@@ -200,6 +223,53 @@ body.home .voter-voice.strip-cta .voter-voice-content .voter-voice-text {
 }
 body.home .voter-voice.strip-cta .button {
   float: right;
+  background: #ffc325;
+}
+/**
+ * About Page
+ */
+body.page-template-about-page .featured-pages .featured-page {
+  margin: 40px auto;
+}
+body.page-template-about-page .featured-pages .featured-page:before,
+body.page-template-about-page .featured-pages .featured-page:after {
+  content: " ";
+  display: table;
+}
+body.page-template-about-page .featured-pages .featured-page:after {
+  clear: both;
+}
+body.page-template-about-page .featured-pages .featured-page h1 {
+  text-align: left;
+  margin-top: 0;
+}
+body.page-template-about-page .featured-pages .featured-page .featured-page-image {
+  width: 40%;
+}
+body.page-template-about-page .featured-pages .featured-page .featured-page-content {
+  width: 60%;
+  padding: 20px;
+}
+body.page-template-about-page .featured-pages .featured-page.left .featured-page-image {
+  float: left;
+  width: 40%;
+}
+body.page-template-about-page .featured-pages .featured-page.left .featured-page-content {
+  float: right;
+  width: 60%;
+  padding: 20px;
+}
+body.page-template-about-page .featured-pages .featured-page.right .featured-page-image {
+  float: right;
+  width: 40%;
+}
+body.page-template-about-page .featured-pages .featured-page.right .featured-page-content {
+  float: left;
+  width: 60%;
+}
+body.page-template-about-page .footer-teaser {
+  padding: 30px;
+  background: #f4f4f4;
 }
 /**
  * Blog
@@ -223,6 +293,16 @@ body.blog .byline {
     z-index: 9;*/
 }
 /**
+ * Social Nav
+ */
+.social-navigation {
+  background: #46579c;
+  padding: 5px 5px 0 5px;
+}
+.social-navigation li a {
+  color: #FFF !important;
+}
+/**
  * Search Toggle
  */
 @media screen and (max-width: 59.6875em) {
@@ -242,11 +322,18 @@ body.blog .byline {
  * Footer
  */
 .copyright {
+  color: #626468;
   border-top: none;
+}
+.footer .widget {
+  color: #626468;
+}
+footer#colophon .site-info {
+  padding-top: 40px;
 }
 footer#colophon a {
   color: #007ec3;
 }
-#social-navigation a {
-  color: #FFF !important;
+footer#colophon h3 {
+  display: none;
 }
