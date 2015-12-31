@@ -84,7 +84,7 @@ hr {
 .navigation-main ul li.menu-item-has-children > a:after {
   display: none;
 }
-.navigation-main li#menu-item-537 {
+.navigation-main li:nth-child(5) {
   border: 1px solid #626468;
 }
 .subscribe-form {
