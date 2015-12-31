@@ -79,9 +79,14 @@ get_header(); ?>
         ?>
         <div class="latest-news">
             <?php while ($news->have_posts()) : $news->the_post(); ?>
-                <h2><?php the_title(); ?></h2>
-                <p><?php the_excerpt(); ?></p>
-                <a href="<?php the_permalink(); ?>">Read more</a>
+                <div class="news-post">
+                    <div class="featured-image">
+                        <?php the_post_thumbnail(); ?>
+                    </div>
+                    <h2><?php the_title(); ?></h2>
+                    <p><?php the_excerpt(); ?></p>
+                    <a href="<?php the_permalink(); ?>">Read more</a>
+                </div>
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
         </div>

@@ -11,6 +11,7 @@
  */
 
 get_header(); ?>
+
     <div class="aboutpage">
     <?php if ( has_post_thumbnail() ): ?>
 		<?php $image_id = get_post_thumbnail_id(); ?>
@@ -23,6 +24,24 @@ get_header(); ?>
         <span class="overlay"></span>
         </div>
     <?php endif; ?>
+    </div>
+
+    <div class="secondary-header">
+        <?php
+            // Start the loop.
+            while ( have_posts() ) : the_post();
+
+                // Include the page content template.
+                get_template_part( 'content', 'page' );
+
+                // If comments are open or we have at least one comment, load up the comment template.
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
+
+            // End the loop.
+            endwhile;
+        ?>
     </div>
 
     <!-- Standard content -->
@@ -64,6 +83,7 @@ get_header(); ?>
                     </div>
                     <div class="featured-page-content">
                         <h1><?php the_title(); ?></h1>
+                        <hr />
                         <?php
                             global $more;    // Declare global $more (before the loop).
                             $more = 1;       // Set (inside the loop) to display all content, including text below more.
@@ -87,11 +107,13 @@ get_header(); ?>
         <div class="teaser-content">
             <h2>Our Team</h2>
             <p>Meet the passionate organizers working for California students and families.</p>
-            <a class="<?php echo site_url('/our-team/'); ?>">Check our team</a>
+            <a class="content-button white <?php echo site_url('/our-team/'); ?>">Check our team</a>
         </div>
-        <div class="teaser-image">
+        <div class="teaser-images">
             <?php while ($staffPages->have_posts()) : $staffPages->the_post(); ?>
-                <?php the_post_thumbnail(); ?>
+                <div class="teaser-image">
+                    <?php the_post_thumbnail(); ?>
+                </div>
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
         </div>
