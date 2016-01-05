@@ -32,8 +32,13 @@
 @colorWhite: rgb(249,247,250);
 @colorYellow: rgb(255,195,37);
 @colorGrayLighter: rgb(243,241,244);
+@colorGrayLight: rgb(148,150,154);
 @colorGray: rgb(98,100,104);
 @colorGrayDarker: rgb(42, 44, 46);
+
+@colorPink: rgb(216,61,125);
+@colorLightBlue: rgb(131,213,226);
+@colorGreen: rgb(54,215,183);
 
 /*  Little dot on home page banner */
 .color {
@@ -65,6 +70,8 @@ header#masthead {
     max-width: 1560px;
     margin: 0 auto;
     background: @colorWhite;
+    padding-top: 22px;
+    // position: relative;
 }
 .headerblock {
     width: @colorWhite;
@@ -80,6 +87,9 @@ header#masthead {
 /**
  * Typography
  */
+button {
+    background: @colorYellow;
+}
 hr {
     width: 40px;
     height: 5px;
@@ -108,12 +118,15 @@ hr {
 .navigation-main  {
     a {
         padding: 10px;
+        &:hover {
+            color: @colorYellow;
+        }
     }
     ul li.menu-item-has-children > a:after {
         display: none;
     }
     // Subscribe Button
-    li:nth-child(5) {
+    li:nth-child(4) {
         border: 1px solid @colorGray;
     }
 }
@@ -128,14 +141,56 @@ hr {
 button.menu-toggle.anarielgenericon {
     padding: 0;
     margin: 0;
+    background: @colorWhite;
     &:before {
         border: none;
+        padding: 0;
+        margin: -6px 0 0 0;
+    }
+}
+.language-select {
+    position: absolute;
+    right: 80px;
+    top: 0px;
+    color: @colorGrayLighter;
+    background: @colorGrayLighter;
+    padding: 0 12px 5px;
+    .language {
+        display: inline-block;
+        margin-left: 10px;
+        &:first-child {
+            margin: 0;
+        }
+        .language-name {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .flag {
+            width: 22px;
+            height: 14px;
+            background-size: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            &.en {
+                background-image: url('images/flag-en.png');
+            }
+            &.es {
+                background-image: url('images/flag-es.png');
+            }
+        }
     }
 }
 
 /**
  * Soliliquy Slider
  */
+.soliloquy-container, .soliloquy-container * {
+    &:hover {
+        background: none;
+    }
+}
 #soliloquy-container- {
     max-height: 456px !important;
 }
@@ -219,6 +274,91 @@ body.page-template-staff-page {
         .featured-page-content {
             padding: 20px;
         }
+    }
+}
+
+/**
+ * Featured Two Up
+ */
+.featured-two-up {
+    .clearfix();
+    .member {
+        width: 50%;
+        height: 50vw;
+        float: left;
+        position: relative;
+        .featured-image-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            img {
+                height: 100%;
+                width: auto;
+                max-width: none;
+            }
+        }
+        .content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 25% 40px 40px 40px;
+            color: @colorWhite;
+            background: fadeout(@colorGrayDarker, 10%);
+            a {
+                color: @colorWhite;
+            }
+            h1 {
+                text-transform: uppercase;
+                font-size: 31px;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+/**
+ * Featured Three Up
+ */
+ .featured-three-up {
+    .clearfix();
+    .member {
+         width: 33%;
+         height: 33vw;
+         float: left;
+         position: relative;
+         &:first-child {
+             width: 34%;
+         }
+         &:nth-child(1) .content {
+             background: fadeout(@colorGreen, 10%);
+         }
+         &:nth-child(2) .content {
+             background: fadeout(@colorLightBlue, 10%);
+         }
+         &:nth-child(3) .content {
+             background: fadeout(@colorPink, 10%);
+         }
+         .content {
+             position: absolute;
+             width: 100%;
+             height: 100%;
+             text-align: center;
+             padding: 20% 40px 40px 40px;
+             color: @colorWhite;
+             i {
+                 font-size: 100px;
+                 margin-bottom: 15px;
+             }
+             a {
+                 color: @colorWhite;
+             }
+             h1 {
+                 text-transform: uppercase;
+                 font-size: 27px;
+                 margin-top: 0;
+             }
+         }
     }
 }
 
@@ -360,7 +500,7 @@ body.page-template-about-page {
                 margin-top: 0;
             }
             .featured-page-image {
-                width: 60vw;
+                width: 60%;
                 height: 100%;
                 overflow: hidden;
                 img {
@@ -370,7 +510,7 @@ body.page-template-about-page {
                 }
             }
             .featured-page-content {
-                width: 40vw;
+                width: 40%;
                 padding: 30px;
                 text-align: center;
                 margin-top: 80px;
@@ -448,18 +588,26 @@ body.blog {
  * Social Nav
  */
  .social-navigation {
-    //  position: fixed;
-    //  top: 0;
-    //  right: 86px;
-    //  bottom: auto;
-     background: @colorRoyal;
-     padding: 5px 5px 0 5px;
+     top: 0;
+     right: 161px;
+     background: none;
+     padding: 0;
+     padding: 3px 5px 0 5px;
     //  z-index: 202;
      li {
-        //  display: inline-block;
+         display: inline-block;
+         margin-bottom: -10px;
          a {
              color: #FFF !important;
+            &:before {
+                color: @colorGray;
+            }
          }
+     }
+     @media screen and (max-width: 59.6875em) {
+         right: 0;
+         top: auto;
+         bottom: 0;
      }
  }
 

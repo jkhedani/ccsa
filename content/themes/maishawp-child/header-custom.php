@@ -21,16 +21,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-<!-- CUSTOM: Subscribe form -->
-<div class="subscribe-form" data-state="closed">
-    <form action="http://www.clicktools.com/survey">
-        <input type="hidden" name="iv" value="thvanipsa0t94" />
-        <input type="text" name="q3" placeholder="Your Email Address" />
-        <button>Subscribe</button>
-    </form>
-</div>
-
 <?php if(get_theme_mod('maisha_header_layout') == 'standard-header') : ?>
     <div class="headerblock standard">
         <div class="content site-content">
@@ -57,7 +47,7 @@
                 <?php endif; ?>
                 </div>
 
-				<!-- CUSTOM: Add Language Switcher here -->
+                <!-- CUSTOM: Add Language Switcher here -->
 				<div class="language-select">
 					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
 						<i class="flag en"></i>
@@ -106,7 +96,7 @@
                     </div>
                 <?php endif; ?>
 
-				<!-- CUSTOM: Add Language Switcher here -->
+                <!-- CUSTOM: Add Language Switcher here -->
 				<div class="language-select">
 					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
 						<i class="flag en"></i>
@@ -158,17 +148,17 @@
                     <?php endif; ?>
                     </div>
 
-					<!-- CUSTOM: Add Language Switcher here -->
-					<div class="language-select">
-						<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
-							<i class="flag en"></i>
-							<!-- <span class="language-name">English</span> -->
-						</a>
-						<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
-							<i class="flag es"></i>
-							<!-- <span class="language-name">Español</span> -->
-						</a>
-					</div>
+                    <!-- CUSTOM: Add Language Switcher here -->
+    				<div class="language-select">
+    					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
+    						<i class="flag en"></i>
+    						<!-- <span class="language-name">English</span> -->
+    					</a>
+    					<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
+    						<i class="flag es"></i>
+    						<!-- <span class="language-name">Español</span> -->
+    					</a>
+    				</div>
 
                 </header><!-- .site-header -->
             </div><!-- .site-content -->
@@ -185,5 +175,21 @@
         <?php endif; ?>
     </div>
 <?php endif; ?>
-
+<div class="aboutpage">
+	<?php $header_image = get_header_image();
+		if ( ! empty( $header_image ) ) { ?>
+        <div class="cd-fixed-bg-one cd-bg-1" style="background-image:url(<?php echo esc_url( header_image() ); ?>);">
+        <div class="entry-content">
+		<?php
+		if( is_home() && get_option('page_for_posts') ) {
+			$blog_page_id = get_option('page_for_posts');
+			echo '<h1>'.get_post(($blog_page_id))->post_title.'</h1>';
+		}
+		?>
+		<hr class="short">
+		</div>
+		<span class="overlay"></span>
+		</div>
+    <?php } ?>
+</div>
 <div id="site">

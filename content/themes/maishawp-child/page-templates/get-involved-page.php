@@ -43,6 +43,54 @@ get_header(); ?>
         ?>
     </div>
 
+    <!-- Featured Two-Up -->
+    <?php $posts = get_field('featured_two_up'); ?>
+    <?php if( $posts ): ?>
+        <div class="featured-two-up">
+            <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+                <?php setup_postdata($post); ?>
+                <div class="member">
+                    <div class="featured-image-container">
+                        <?php the_post_thumbnail(); ?>
+                    </div>
+                    <div class="content">
+                        <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
+                        <hr />
+                        <?php the_content(); ?>
+                        <?php $ctaLink = get_field('custom_cta_link'); ?>
+                        <?php $ctaText = get_field('custom_cta_text'); ?>
+                        <a class="button" href="<?php echo $ctaLink; ?>"><?php echo $ctaText; ?></a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+    <?php endif; ?>
+
+    <div class="featured-three-up">
+        <div class="member">
+            <div class="content">
+                <i class="fa fa-pencil"></i>
+                <h1>Sign Up</h1>
+                <a class="Button" href="#">Subscribe to CCSA Families</a>
+            </div>
+        </div>
+        <div class="member">
+            <div class="content">
+                <i class="fa fa-check"></i>
+                <h1>Register To Vote</h1>
+                <a class="Button" href="#">Register Now</a>
+            </div>
+        </div>
+        <div class="member">
+            <div class="content">
+                <i class="fa fa-users"></i>
+                <h1>Join Our Team</h1>
+                <a class="Button" href="#">See Job Opportunities</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Featured Pages -->
     <?php $posts = get_field('featured_pages'); ?>
     <?php if( $posts ): ?>
