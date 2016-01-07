@@ -85,10 +85,15 @@ get_header(); ?>
                         <h1><?php the_title(); ?></h1>
                         <hr />
                         <?php
-                            global $more;    // Declare global $more (before the loop).
-                            $more = 1;       // Set (inside the loop) to display all content, including text below more.
-                            the_content();
+                            // global $more;    // Declare global $more (before the loop).
+                            // $more = 1;       // Set (inside the loop) to display all content, including text below more.
+                            the_content('');
                         ?>
+                        <?php $ctaLink = get_field('custom_cta_link'); ?>
+                        <?php $ctaText = get_field('custom_cta_text'); ?>
+                        <?php if ( $ctaLink ) : ?>
+                            <a class="content-button" href="<?php echo $ctaLink; ?>"><?php echo $ctaText; ?></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php endforeach; ?>

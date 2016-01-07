@@ -188,6 +188,28 @@ get_header( 'custom' ); ?>
                     </div>
                     </div>
                     <?php elseif(get_theme_mod('maisha_blog_layout') == 'grid-full') : ?>
+
+                        <!-- Add Custom Loop for featured articles -->
+                        <?php
+                            $featuredPosts = new WP_Query( array(
+                                'category_name' => 'featured',
+                                'post_type' => 'post'
+                            ));
+                        ?>
+                        <!-- <div class="featured-news">
+                            <?php while($featuredPosts->have_posts()) : $featuredPosts->the_post(); ?>
+                                <div class="news-item">
+                                    <div class="the-content">
+                                        <?php the_title(); ?>
+                                        <?php the_content(); ?>
+                                    </div>
+                                    <div class="thumbnail-container">
+                                        <?php the_post_thumbnail(); ?>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div> -->
+
                         <div class="columns clear grid-post">
                         <?php if ( have_posts() ) : ?>
                             <?php

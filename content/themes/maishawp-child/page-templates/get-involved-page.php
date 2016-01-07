@@ -67,8 +67,24 @@ get_header(); ?>
         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
     <?php endif; ?>
 
+
+    <?php if( have_rows('three_up_links') ): ?>
     <div class="featured-three-up">
-        <div class="member">
+
+        <?php while ( have_rows('three_up_links') ) : the_row(); ?>
+            <div class="member">
+                <div class="content">
+                    <i class="fa <?php the_sub_field('font_awesome_icon_class'); ?>"></i>
+                    <h1><?php the_sub_field('title'); ?></h1>
+                    <a class="Button" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('blurb'); ?></a>
+                </div>
+            </div>
+        <?php endwhile; ?>
+
+    <?php endif; ?>
+
+
+        <!-- <div class="member">
             <div class="content">
                 <i class="fa fa-pencil"></i>
                 <h1>Sign Up</h1>
@@ -89,7 +105,7 @@ get_header(); ?>
                 <a class="Button" href="#">See Job Opportunities</a>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Featured Pages -->
     <?php $posts = get_field('featured_pages'); ?>

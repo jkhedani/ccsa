@@ -54,18 +54,26 @@ get_header(); ?>
         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
     <?php endif; ?>
 
-    <!-- HACK: Random content -->
-    <div class="section">
-        <h2>What We Do We</h2>
-        <p>Help charter school families become leaders in their communities, uniting them into a powerful voice for excellent schools. See how families have made a real difference in education for their communities.</p>
-        <a class="button" href="#">View News</a>
-    </div>
-
-    <div class="section">
-        <h2>Help Your Community</h2>
-        <p>Wherever you live, we want to work with you. Get in touch and an Organizer will contact you about how you can help improve education where you live.</p>
-        <a class="button" href="#">Get in touch</a>
-    </div>
+    <!-- Featured Pages -->
+    <?php $posts = get_field('featured_pages'); ?>
+    <?php if( $posts ): ?>
+        <div class="featured-pages">
+            <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+                <?php setup_postdata($post); ?>
+                <div class="member section">
+                    <div class="content">
+                        <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
+                        <!-- <hr /> -->
+                        <?php the_content(); ?>
+                        <?php $ctaLink = get_field('custom_cta_link'); ?>
+                        <?php $ctaText = get_field('custom_cta_text'); ?>
+                        <a class="button" href="<?php echo $ctaLink; ?>"><?php echo $ctaText; ?></a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+    <?php endif; ?>
 
 
     <!-- Latest News -->
