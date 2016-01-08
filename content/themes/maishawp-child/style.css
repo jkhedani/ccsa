@@ -24,7 +24,11 @@
 .button,
 .search-toggle {
   color: #FFF !important;
-  background: #46579c;
+  background: #0079c2;
+}
+.button:hover,
+.search-toggle:hover {
+  background: #ffc325;
 }
 .site-branding {
   width: 250px;
@@ -95,7 +99,7 @@ hr {
   border: 1px solid #626468;
 }
 .subscribe-form {
-  background: #46579c;
+  background: #0079c2;
   height: 0;
   transition: all 1.0s ease;
 }
@@ -363,7 +367,7 @@ body.page-template-staff-page .entry-content p {
 .squad .member .content {
   position: relative;
   color: #f9f7fa;
-  background: rgba(70, 87, 156, 0.9);
+  background: rgba(0, 121, 194, 0.9);
   z-index: 2;
   height: 100%;
   width: 100%;
@@ -737,7 +741,7 @@ footer#colophon .site-info {
   padding-top: 40px;
 }
 footer#colophon a {
-  color: #46579c;
+  color: #0079c2;
 }
 footer#colophon h3 {
   display: none;
