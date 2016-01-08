@@ -112,7 +112,7 @@ get_header(); ?>
         <div class="teaser-content">
             <h2>Our Team</h2>
             <p>Meet the passionate organizers working for California students and families.</p>
-            <a class="content-button white <?php echo site_url('/our-team/'); ?>">Check our team</a>
+            <a href="<?php echo site_url('/our-team/'); ?>" class="content-button white">Check our team</a>
         </div>
         <div class="teaser-images">
             <?php while ($staffPages->have_posts()) : $staffPages->the_post(); ?>

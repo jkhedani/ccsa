@@ -110,7 +110,8 @@ button.menu-toggle.anarielgenericon {
 button.menu-toggle.anarielgenericon:before {
   border: none;
   padding: 0;
-  margin: -6px 0 0 0;
+  margin: -14px 0 0 0;
+  display: block;
 }
 .language-select {
   position: absolute;
@@ -118,7 +119,7 @@ button.menu-toggle.anarielgenericon:before {
   top: 0px;
   color: #f3f1f4;
   background: #f3f1f4;
-  padding: 0 12px 5px;
+  padding: 3px 12px 6px;
 }
 .language-select .language {
   display: inline-block;
@@ -241,6 +242,7 @@ body.page-template-staff-page .entry-content p {
 .featured-two-up .member {
   width: 50%;
   height: 50vw;
+  max-height: 573px;
   float: left;
   position: relative;
 }
@@ -285,6 +287,7 @@ body.page-template-staff-page .entry-content p {
 .featured-three-up .member {
   width: 33%;
   height: 33vw;
+  max-height: 413px;
   float: left;
   position: relative;
 }
@@ -317,7 +320,7 @@ body.page-template-staff-page .entry-content p {
 }
 .featured-three-up .member .content h1 {
   text-transform: uppercase;
-  font-size: 27px;
+  font-size: 25px;
   margin-top: 0;
 }
 /**
@@ -455,6 +458,7 @@ body.home .voter-voice.strip-cta .button {
 body.page-template-about-page .featured-pages .featured-page {
   margin: 0 auto;
   height: 40vw;
+  max-height: 443px;
 }
 body.page-template-about-page .featured-pages .featured-page:before,
 body.page-template-about-page .featured-pages .featured-page:after {
@@ -537,8 +541,100 @@ body.page-template-about-page .footer-teaser .teaser-images .teaser-image {
 /**
  * Blog
  */
+body.blog {
+  /**
+     * Featured News
+     */
+}
+body.blog .post-thumbnail {
+  background: #f3f1f4;
+  min-height: 253px;
+}
+body.blog .featured-news {
+  margin: 0 0 40px 0;
+}
+body.blog .featured-news .news-item {
+  position: relative;
+  max-height: 40vw;
+  overflow: hidden;
+}
+body.blog .featured-news .news-item .thumbnail-container {
+  width: 100%;
+  z-index: 1;
+}
+body.blog .featured-news .news-item .the-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  padding: 10vw;
+  text-align: center;
+  color: #f9f7fa;
+  background: rgba(42, 44, 46, 0.8);
+  float: left;
+}
+body.blog .featured-news .news-item .the-content h1 {
+  font-size: 3.1rem;
+  margin-top: 0;
+  line-height: 1.4;
+}
 body.blog .byline {
   display: none;
+}
+body.blog .gridpost .pagination {
+  background: #f3f1f4;
+}
+/**
+ * Staff Page
+ */
+body.page-template-staff-page .columns {
+  padding: 0;
+}
+body.page-template-staff-page .staff:before,
+body.page-template-staff-page .staff:after {
+  content: " ";
+  display: table;
+}
+body.page-template-staff-page .staff:after {
+  clear: both;
+}
+body.page-template-staff-page .staff .member {
+  max-width: 350px;
+  max-height: 350px;
+  width: 25vw;
+  height: 25vw;
+  float: left;
+  margin: 0;
+  position: relative;
+}
+body.page-template-staff-page .staff .member .post-thumbnail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+body.page-template-staff-page .staff .member .post-thumbnail img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+body.page-template-staff-page .staff .member .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #2a2c2e;
+  color: #f9f7fa;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  padding-top: 25%;
+}
+body.page-template-staff-page .staff .member .content:hover {
+  opacity: 1.0;
+}
+ul.contact-info {
+  list-style: none;
 }
 /**
  * Site Logo
@@ -553,7 +649,7 @@ body.blog .byline {
     z-index: 9;*/
 }
 /**
- * Social Nav
+ * Social Navigation
  */
 .social-navigation {
   top: 0;
@@ -579,6 +675,24 @@ body.blog .byline {
     bottom: 0;
   }
 }
+#social-navigation {
+  display: none;
+}
+@media screen and (max-width: 59.6875em) {
+  #social-navigation {
+    display: block;
+  }
+}
+#social-navigation-header {
+  display: block;
+  position: absolute;
+  right: 223px;
+}
+@media screen and (max-width: 59.6875em) {
+  #social-navigation-header {
+    display: none;
+  }
+}
 /**
  * Search Toggle
  */
@@ -591,10 +705,10 @@ body.blog .byline {
 /**
  * Intro Image
  */
-@media (min-width: 991px) {
+@media (min-width: 955px) {
   .intro,
   .aboutpage {
-    margin-top: 65px;
+    margin-top: 85px;
   }
 }
 /**

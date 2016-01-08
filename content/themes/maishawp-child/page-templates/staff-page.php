@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Staff Member Template
+ * Template Name: Staff Page
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages and that
@@ -13,34 +13,48 @@
 get_header(); ?>
     <div class="intro">
 		<?php
-          // Start the loop.
-          while ( have_posts() ) : the_post();
+        // Start the loop.
+        while ( have_posts() ) : the_post();
 
-              // Include the page content template.
-              get_template_part( 'content', 'about-page' );
+            // Include the page content template.
+            get_template_part( 'content', 'about-page' );
 
-          // End the loop.
-          endwhile;
+        // End the loop.
+        endwhile;
         ?>
-        <?php $phoneNumber = get_field('phone_number'); ?>
-        <?php $emailAddress = get_field('email_address'); ?>
-        <ul class="contact-info">
-            <li><strong>MAIL</strong> <?php echo $emailAddress; ?></li>
-            <li><strong>TEL</strong> <?php echo $phoneNumber; ?></li>
-        </ul>
+    </div><!-- .intro -->
 
+    <!-- CUSTOM: Staff Bio Feed -->
     <?php
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) :
-	?>
-    <div class="hfeed site default-page">
-        <div class="content site-content">
-            <div class="content-area">
-                <div class="main site-main" role="main">
-                    <?php comments_template(); ?>
-                </div><!-- .site-main -->
-            </div><!-- .content-area -->
-        </div><!-- .site-content -->
-    </div><!-- .site -->
-    <?php endif; ?>
+        $child_pages = new WP_Query( array(
+            'post_type'      => 'page',
+            'orderby'        => 'menu_order',
+            'order'          => 'ASC',
+            'post_parent'    => $post->ID,
+            'posts_per_page' => 999,
+            'no_found_rows'  => true,
+        ) );
+    ?>
+    <div class="staff">
+    <?php while ( $child_pages->have_posts() ) : $child_pages->the_post(); ?>
+        <div class="member">
+            <div class="post-thumbnail"><?php the_post_thumbnail(); ?></div>
+            <div class="content">
+                <h1><?php the_title(); ?></h1>
+                <?php $phoneNumber = get_field('phone_number'); ?>
+                <?php $emailAddress = get_field('email_address'); ?>
+                <ul class="contact-info">
+                    <?php if ( $phoneNumber ) : ?>
+                        <li><i class="fa fa-envelope"></i> <?php echo $emailAddress; ?></li>
+                    <?php endif; ?>
+                    <?php if ( $emailAddress ) : ?>
+                        <li><i class="fa fa-phone"></i> <?php echo $phoneNumber; ?></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </div>
+    <?php endwhile; ?>
+    <?php wp_reset_postdata(); ?>
+    </div><!-- .staff -->
+
 <?php get_footer(); ?>

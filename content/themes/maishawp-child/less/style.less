@@ -84,6 +84,7 @@ header#masthead {
     padding: 180px;
 }
 
+
 /**
  * Typography
  */
@@ -145,7 +146,8 @@ button.menu-toggle.anarielgenericon {
     &:before {
         border: none;
         padding: 0;
-        margin: -6px 0 0 0;
+        margin: -14px 0 0 0;
+        display: block;
     }
 }
 .language-select {
@@ -154,7 +156,7 @@ button.menu-toggle.anarielgenericon {
     top: 0px;
     color: @colorGrayLighter;
     background: @colorGrayLighter;
-    padding: 0 12px 5px;
+    padding: 3px 12px 6px;
     .language {
         display: inline-block;
         margin-left: 10px;
@@ -285,6 +287,7 @@ body.page-template-staff-page {
     .member {
         width: 50%;
         height: 50vw;
+        max-height: 573px;
         float: left;
         position: relative;
         .featured-image-container {
@@ -325,6 +328,7 @@ body.page-template-staff-page {
     .member {
          width: 33%;
          height: 33vw;
+         max-height: 413px;
          float: left;
          position: relative;
          &:first-child {
@@ -494,6 +498,7 @@ body.page-template-about-page {
             .clearfix();
             margin: 0 auto;
             height: 40vw;
+            max-height: 443px;
             h1 {
                 text-transform: uppercase;
                 font-size: 31px;
@@ -566,25 +571,105 @@ body.blog {
     .aboutpage {
         // display: none;
     }
+    .post-thumbnail {
+        background: @colorGrayLighter;
+        min-height: 253px;
+    }
 
     /**
      * Featured News
      */
-    // .featured-news {
-    //     .news-item {
-    //         .thumbnail-container {
-    //
-    //         }
-    //         .the-content {
-    //
-    //         }
-    //     }
-    // }
+    .featured-news {
+        margin: 0 0 40px 0;
+        .news-item {
+            position: relative;
+            max-height: 40vw;
+            overflow: hidden;
+            .thumbnail-container {
+                width: 100%;
+                z-index: 1;
+            }
+            .the-content {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 2;
+                padding: 10vw;
+                text-align: center;
+                color: @colorWhite;
+                background: fadeout(@colorGrayDarker, 20%);
+                float: left;
+                h1 {
+                    font-size: 3.1rem;
+                    margin-top: 0;
+                    line-height: 1.4;
+                }
+                // hr {
+                //     margin: 15px 0;
+                // }
+            }
+        }
+    }
 
     .byline {
         display: none;
     }
+    .gridpost .pagination {
+        background: @colorGrayLighter;
+    }
 }
+
+/**
+ * Staff Page
+ */
+body.page-template-staff-page {
+    .columns {
+        padding: 0;
+    }
+    .staff {
+        .clearfix();
+        .member {
+            max-width: 350px;
+            max-height: 350px;
+            width: 25vw;
+            height: 25vw;
+            float: left;
+            margin: 0;
+            position: relative;
+            .post-thumbnail {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-width: none;
+                }
+            }
+            .content {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                background: @colorGrayDarker;
+                color: @colorWhite;
+                text-align: center;
+                opacity: 0;
+                transition: all 0.5s ease;
+                cursor: pointer;
+                padding-top: 25%;
+                &:hover {
+                    opacity: 1.0;
+                }
+
+            }
+        }
+    }
+}
+ul.contact-info {
+    list-style: none;
+}
+
 
 /**
  * Site Logo
@@ -601,7 +686,7 @@ body.blog {
 
 
 /**
- * Social Nav
+ * Social Navigation
  */
  .social-navigation {
      top: 0;
@@ -620,15 +705,27 @@ body.blog {
             }
          }
      }
-    //  @media (max-width:1560px) {
-    //      right:
-    //  }
      @media screen and (max-width: 59.6875em) {
          right: 0;
          top: auto;
          bottom: 0;
      }
  }
+#social-navigation {
+    display: none;
+    @media screen and (max-width: 59.6875em) {
+        display: block;
+    }
+}
+#social-navigation-header {
+    display: block;
+    position: absolute;
+    right: 223px;
+    @media screen and (max-width: 59.6875em) {
+        display: none;
+    }
+}
+
 
 /**
  * Search Toggle
@@ -643,8 +740,8 @@ body.blog {
  * Intro Image
  */
 .intro, .aboutpage {
-    @media( min-width: 991px ) {
-        margin-top: 65px;
+    @media( min-width: 955px ) {
+        margin-top: 85px;
     }
 }
 

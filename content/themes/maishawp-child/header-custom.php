@@ -50,12 +50,12 @@
                 <!-- CUSTOM: Add Language Switcher here -->
 				<div class="language-select">
 					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
-						<i class="flag en"></i>
-						<!-- <span class="language-name">English</span> -->
+						<!-- <i class="flag en"></i> -->
+						<span class="language-name">English</span>
 					</a>
 					<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
-						<i class="flag es"></i>
-						<!-- <span class="language-name">Español</span> -->
+						<!-- <i class="flag es"></i> -->
+						<span class="language-name">Español</span>
 					</a>
 				</div>
 
@@ -99,12 +99,12 @@
                 <!-- CUSTOM: Add Language Switcher here -->
 				<div class="language-select">
 					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
-						<i class="flag en"></i>
-						<!-- <span class="language-name">English</span> -->
+						<!-- <i class="flag en"></i> -->
+						<span class="language-name">English</span>
 					</a>
 					<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
-						<i class="flag es"></i>
-						<!-- <span class="language-name">Español</span> -->
+						<!-- <i class="flag es"></i> -->
+						<span class="language-name">Español</span>
 					</a>
 				</div>
 
@@ -151,12 +151,12 @@
                     <!-- CUSTOM: Add Language Switcher here -->
     				<div class="language-select">
     					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
-    						<i class="flag en"></i>
-    						<!-- <span class="language-name">English</span> -->
+    						<!-- <i class="flag en"></i> -->
+    						<span class="language-name">English</span>
     					</a>
     					<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
-    						<i class="flag es"></i>
-    						<!-- <span class="language-name">Español</span> -->
+    						<!-- <i class="flag es"></i> -->
+    						<span class="language-name">Español</span>
     					</a>
     				</div>
 

@@ -161,14 +161,28 @@
 					<!-- CUSTOM: Add Language Switcher here -->
 					<div class="language-select">
 						<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
-							<i class="flag en"></i>
-							<!-- <span class="language-name">English</span> -->
+							<!-- <i class="flag en"></i> -->
+							<span class="language-name">English</span>
 						</a>
 						<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
-							<i class="flag es"></i>
-							<!-- <span class="language-name">Español</span> -->
+							<!-- <i class="flag es"></i> -->
+							<span class="language-name">Español</span>
 						</a>
 					</div>
+					<?php if ( has_nav_menu( 'social' ) ) : ?>
+			            <nav id="social-navigation-header" class="social-navigation" role="navigation">
+			                <?php
+			                    // Social links navigation menu.
+			                    wp_nav_menu( array(
+			                        'theme_location' => 'social',
+			                        'depth'          => 1,
+			                        'link_before'    => '<span class="screen-reader-text">',
+			                        'link_after'     => '</span>',
+			                    ) );
+			                ?>
+			            </nav><!-- .social-navigation -->
+			        <?php endif; ?>
+
 
                 </header><!-- .site-header -->
             </div><!-- .site-content -->
