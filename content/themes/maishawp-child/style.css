@@ -452,6 +452,18 @@ body.home .voter-voice.strip-cta .button {
   float: right;
   background: #ffc325;
 }
+body.home .featured-pages:before,
+body.home .featured-pages:after {
+  content: " ";
+  display: table;
+}
+body.home .featured-pages:after {
+  clear: both;
+}
+body.home .featured-pages .member {
+  width: 50%;
+  float: left;
+}
 /**
  * About Page
  */

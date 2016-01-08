@@ -35,33 +35,18 @@ get_header(); ?>
         <a class="button" href="<?php echo get_field('voter_voice_link'); ?>">Take Action</a>
     </div>
 
-    <!-- Featured Pages -->
-    <?php $posts = get_field('featured_pages'); ?>
-    <?php if( !$posts ): ?>
-        <div class="featured-pages squad section">
-            <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-                <?php setup_postdata($post); ?>
-                <div class="member">
-                    <?php the_post_thumbnail(); ?>
-                    <div class="content">
-                        <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-                        <?php the_excerpt(); ?>
-                        <a href="<?php the_permalink(); ?>" class="more-link">Learn more</a>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-    <?php endif; ?>
 
     <!-- Featured Pages -->
     <?php $posts = get_field('featured_pages'); ?>
     <?php if( $posts ): ?>
-        <div class="featured-pages">
+        <div class="featured-pages section">
             <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
                 <?php setup_postdata($post); ?>
-                <div class="member section">
+                <div class="member">
                     <div class="content">
+                        <div class="post-thumbnail">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
                         <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
                         <!-- <hr /> -->
                         <?php the_content(); ?>
