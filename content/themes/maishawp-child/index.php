@@ -17,32 +17,6 @@ get_header( 'custom' ); ?>
     <div class="hfeed site">
         <div class="content site-content">
 
-            <!-- Add Custom Loop for featured articles -->
-            <?php
-                $featuredPosts = new WP_Query( array(
-                    'category_name' => 'featured',
-                    'post_type' => 'post'
-                ));
-            ?>
-            <div class="featured-news">
-                <?php while($featuredPosts->have_posts()) : $featuredPosts->the_post(); ?>
-                    <div class="news-item">
-                        <div class="the-content">
-                            <h1><?php the_title(); ?></h1>
-                            <hr />
-                            <?php
-                                $content = get_the_content();
-                                $trimmed_content = wp_trim_words( $content, 30 );
-                                echo $trimmed_content;
-                            ?>
-                        </div>
-                        <div class="thumbnail-container">
-                            <?php the_post_thumbnail(); ?>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
-            </div>
-
             <main class="main site-main" role="main">
                 <div class="single-themes-page clear news">
 					<?php if(get_theme_mod('maisha_blog_layout') == 'sidebar-left') : ?>
@@ -214,31 +188,48 @@ get_header( 'custom' ); ?>
                     </div>
                     </div>
                     </div>
+
+
+
+
+
+
+
+
                     <?php elseif(get_theme_mod('maisha_blog_layout') == 'grid-full') : ?>
 
                         <div class="columns clear grid-post">
-                        <?php if ( have_posts() ) : ?>
-                            <?php
-                            // Start the loop.
-                            while ( have_posts() ) : the_post();
 
-                                /*
-                                 * Include the Post-Format-specific template for the content.
-                                 * If you want to override this in a child theme, then include a file
-                                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                                 */
-                                get_template_part( 'content-post-grid', get_post_format() ); ?>
-
-
-                            <?php endwhile;
-							// End the loop.
-
-                        // If no content, include the "No posts found" template.
-                        else :
-                            get_template_part( 'content', 'none' );
-
-                        endif;
+                        <!-- Add Custom Loop for featured articles -->
+                        <div class="featured-posts">
+                        <?php
+                            $featuredPostIDs = array();
+                            $featuredPosts = new WP_Query( array(
+                                'category_name' => 'featured',
+                                'post_type' => 'post'
+                            ));
                         ?>
+                        <?php
+                            while($featuredPosts->have_posts()) : $featuredPosts->the_post();
+                                $featuredPostIDs[] = $post->ID;
+                                get_template_part( 'content-post-grid', get_post_format() );
+                            endwhile;
+                        ?>
+                        </div>
+
+
+                        <!-- Add Custom Loop for featured articles -->
+                        <?php
+                            $featuredPosts = new WP_Query( array(
+                                'post_type'     => 'post',
+                                'post__not_in'  => $featuredPostIDs
+                            ));
+                        ?>
+                        <?php while($featuredPosts->have_posts()) : $featuredPosts->the_post(); ?>
+                            <?php get_template_part( 'content-post-grid', get_post_format() ); ?>
+                        <?php endwhile; ?>
+
+
                     </div>
                     <div class="gridpost">
                     <?php
@@ -249,6 +240,13 @@ get_header( 'custom' ); ?>
                                 'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'maisha' ) . ' </span>',
                             ) ); ?>
                     </div>
+
+
+
+
+
+
+
                     <?php elseif(get_theme_mod('maisha_blog_layout') == 'list') : ?>
                     <div class="two_third list">
                     <div id="primary" class="content-area">

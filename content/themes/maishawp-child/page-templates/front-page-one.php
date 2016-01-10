@@ -77,8 +77,8 @@ get_header(); ?>
                         <?php the_post_thumbnail(); ?>
                     </div>
                     <h2><?php the_title(); ?></h2>
-                    <p><?php the_excerpt(); ?></p>
-                    <a href="<?php the_permalink(); ?>">Read more</a>
+                    <p><?php echo substr(get_the_excerpt(), 0, 110); ?>...</p>
+                    <a class="button wire" href="<?php the_permalink(); ?>">Read more</a>
                 </div>
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
