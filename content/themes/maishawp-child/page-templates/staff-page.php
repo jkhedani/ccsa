@@ -39,7 +39,7 @@ get_header(); ?>
     <?php while ( $child_pages->have_posts() ) : $child_pages->the_post(); ?>
         <div class="member">
             <div class="post-thumbnail"><?php the_post_thumbnail(); ?></div>
-            <div class="content">
+            <div class="info">
                 <h1><?php the_title(); ?></h1>
                 <?php $phoneNumber = get_field('phone_number'); ?>
                 <?php $emailAddress = get_field('email_address'); ?>
@@ -51,6 +51,9 @@ get_header(); ?>
                         <li><i class="fa fa-phone"></i> <?php echo $phoneNumber; ?></li>
                     <?php endif; ?>
                 </ul>
+            </div>
+            <div class="content">
+                <?php the_content(); ?>
             </div>
         </div>
     <?php endwhile; ?>

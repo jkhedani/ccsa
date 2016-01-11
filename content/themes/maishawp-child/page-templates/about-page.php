@@ -101,6 +101,8 @@ get_header(); ?>
         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
     <?php endif; ?>
 
+    <!-- About Video -->
+
     <!-- Our Team Teaser -->
     <?php
         $staffPages = new WP_Query(array(
@@ -112,7 +114,7 @@ get_header(); ?>
         <div class="teaser-content">
             <h2>Our Team</h2>
             <p>Meet the passionate organizers working for California students and families.</p>
-            <a href="<?php echo site_url('/our-team/'); ?>" class="content-button white">Check our team</a>
+            <a href="<?php echo site_url('/our-team/'); ?>" class="button wire">Check our team</a>
         </div>
         <div class="teaser-images">
             <?php while ($staffPages->have_posts()) : $staffPages->the_post(); ?>
@@ -120,6 +122,10 @@ get_header(); ?>
                     <?php the_post_thumbnail(); ?>
                 </div>
             <?php endwhile; ?>
+            <div class="teaser-image placeholder blue"></div>
+            <div class="teaser-image placeholder pink"></div>
+            <div class="teaser-image placeholder green"></div>
+            <div class="teaser-image placeholder gray"></div>
             <?php wp_reset_postdata(); ?>
         </div>
     </div>

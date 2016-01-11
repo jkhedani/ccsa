@@ -28,4 +28,14 @@ jQuery(document).ready(function($) {
         }
     });
 
+    /**
+     * Staff Bio
+     */
+    if ( $('body').hasClass('page-template-staff-page') ) {
+        $('.member').on('click', function() {
+            $(this).find('.content').show();
+        });
+    }
+
+
 });
