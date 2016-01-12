@@ -24,10 +24,27 @@
 
 <!-- CUSTOM: Subscribe form -->
 <div class="subscribe-form" data-state="closed">
-    <form action="http://www.clicktools.com/survey">
+	<div class="text">
+		<h1>Sign up</h1>
+		<p>Get action alerts and invites for events in your area!</p>
+	</div>
+
+	<form action="http://www.clicktools.com/survey">
         <input type="hidden" name="iv" value="thvanipsa0t94" />
-        <input type="text" name="q3" placeholder="Your Email Address" />
-        <button>Subscribe</button>
+		<div class="volunteer-boxes form-group">
+			<input type="text" name="name" placeholder="Your Name" />
+			<input type="text" name="zipcode" placeholder="Your Zipcode" />
+			<input type="text" name="phone" placeholder="Your Phone Number" />
+		</div>
+		<div class="form-group">
+			<input type="text" name="q3" placeholder="Your Email Address" />
+			<button>Subscribe</button>
+		</div>
+		<div class="form-group">
+			<input type="checkbox" name="volunteer" />
+			<label>I want to volunteer in my area</label>
+		</div>
+
     </form>
 </div>
 

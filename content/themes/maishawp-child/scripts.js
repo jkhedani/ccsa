@@ -14,18 +14,27 @@ jQuery(document).ready(function($) {
             // Slide the site header
             $('.site-header').css('top','0px');
             // Subscribe form
-            $('.subscribe-form').css('height','00px');
+            $('.subscribe-form').css('height','0px');
+            $('.subscribe-form').css('padding','0px');
         } else if ( subscribeState === "closed" ) {
             $('.subscribe-form').attr('data-state','open');
             // Slide the site header
-            $('.site-header').css('top','150px');
+            $('.site-header').css('top','340px');
             // Subscribe form
-            $('.subscribe-form').css('height','150px');
+            $('.subscribe-form').css('height','340px');
+            $('.subscribe-form').css('padding','40px 20%');
             // Fade in content
             setTimeout(function() {
                 $('.subscribe-form form').fadeIn();
             },500);
         }
+    });
+
+    /**
+     * Show Hidden Fields
+     */
+    $('input[name="volunteer"]').on('click', function() {
+        $(this).parents('form').find('.volunteer-boxes').show();
     });
 
     /**

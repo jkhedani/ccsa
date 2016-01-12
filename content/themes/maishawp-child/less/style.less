@@ -146,11 +146,32 @@ hr {
     }
 }
 .subscribe-form {
+    color: @colorWhite;
     background: @colorRoyal;
     height: 0;
     transition: all 1.0s ease;
+    .clearfix();
+    h1 {
+        font-size: 23px;
+    }
     form {
         display: none;
+
+        input[type="text"] {
+            width: 300px;
+            clear: left;
+            margin-bottom: 10px;
+        }
+        button {
+            clear: both;
+            float: right;
+        }
+        .volunteer-boxes {
+            display: none;
+        }
+        .form-group {
+            clear: both;
+        }
     }
 }
 button.menu-toggle.anarielgenericon {
@@ -492,6 +513,7 @@ body.home .voter-voice.strip-cta {
         }
     }
     .button {
+        padding: 12px 42px;
         float: right;
     }
 }
@@ -499,15 +521,15 @@ body.home {
     .featured-pages {
         .clearfix();
         .member {
-            width: 38vw;
+            width: 48%;
             max-width: 554px;
             float: left;
-            margin-left: 4vw;
+            margin-left: 4%;
             &:first-child {
                 margin: 0;
             }
             .post-thumbnail {
-                height: 48vw;
+                height: 48%;
                 overflow: hidden;
                 img {
                     width: auto;
