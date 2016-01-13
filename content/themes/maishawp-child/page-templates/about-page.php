@@ -112,9 +112,13 @@ get_header(); ?>
     ?>
     <div class="footer-teaser">
         <div class="teaser-content">
-            <h2>Our Team</h2>
-            <p>Meet the passionate organizers working for California students and families.</p>
-            <a href="<?php echo site_url('/our-team/'); ?>" class="button wire">Check our team</a>
+            <?php $FooterCtaTitle = get_field('footer_title'); ?>
+            <?php $FooterCtaBlurb = get_field('footer_blurb'); ?>
+            <?php $FooterCtaText = get_field('footer_cta_text'); ?>
+            <?php $FooterCtaLink = get_field('footer_cta_link'); ?>
+            <h2><?php echo $FooterCtaTitle; ?></h2>
+            <p><?php echo $FooterCtaBlurb; ?></p>
+            <a href="<?php echo $FooterCtaLink; ?>" class="button wire"><?php echo $FooterCtaText; ?></a>
         </div>
         <div class="teaser-images">
             <?php while ($staffPages->have_posts()) : $staffPages->the_post(); ?>
