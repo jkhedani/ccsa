@@ -489,7 +489,11 @@ body.home .voter-voice.strip-cta .voter-voice-content {
   float: left;
   max-width: 70%;
 }
+body.home .voter-voice.strip-cta .voter-voice-content h2 {
+  font-size: 16px;
+}
 body.home .voter-voice.strip-cta .voter-voice-content .voter-voice-text {
+  font-size: 14px;
   margin-bottom: 0;
 }
 body.home .voter-voice.strip-cta .button {
