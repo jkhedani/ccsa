@@ -46,20 +46,22 @@ get_header(); ?>
     <!-- Featured Two-Up -->
     <?php $posts = get_field('featured_two_up'); ?>
     <?php if( $posts ): ?>
-        <div class="featured-two-up">
+        <div class="featured-two-up row">
             <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
                 <?php setup_postdata($post); ?>
-                <div class="member">
+                <div class="member col-sm-6">
                     <div class="featured-image-container">
                         <?php the_post_thumbnail(); ?>
                     </div>
-                    <div class="content">
-                        <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-                        <hr />
-                        <?php the_content(); ?>
-                        <?php $ctaLink = get_field('custom_cta_link'); ?>
-                        <?php $ctaText = get_field('custom_cta_text'); ?>
-                        <a class="button" href="<?php echo $ctaLink; ?>"><?php echo $ctaText; ?></a>
+                    <div class="content col-sm-6">
+                        <div class="vertical-align">
+                            <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
+                            <hr />
+                            <?php the_content(); ?>
+                            <?php $ctaLink = get_field('custom_cta_link'); ?>
+                            <?php $ctaText = get_field('custom_cta_text'); ?>
+                            <a class="button" href="<?php echo $ctaLink; ?>"><?php echo $ctaText; ?></a>
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -69,10 +71,10 @@ get_header(); ?>
 
 
     <?php if( have_rows('three_up_links') ): ?>
-    <div class="featured-three-up">
+    <div class="featured-three-up row">
 
         <?php while ( have_rows('three_up_links') ) : the_row(); ?>
-            <div class="member">
+            <div class="member col-sm-4">
                 <div class="content">
                     <i class="fa <?php the_sub_field('font_awesome_icon_class'); ?>"></i>
                     <h1><?php the_sub_field('title'); ?></h1>
@@ -83,29 +85,7 @@ get_header(); ?>
 
     <?php endif; ?>
 
-
-        <!-- <div class="member">
-            <div class="content">
-                <i class="fa fa-pencil"></i>
-                <h1>Sign Up</h1>
-                <a class="Button" href="#">Subscribe to CCSA Families</a>
-            </div>
-        </div>
-        <div class="member">
-            <div class="content">
-                <i class="fa fa-check"></i>
-                <h1>Register To Vote</h1>
-                <a class="Button" href="#">Register Now</a>
-            </div>
-        </div>
-        <div class="member">
-            <div class="content">
-                <i class="fa fa-users"></i>
-                <h1>Join Our Team</h1>
-                <a class="Button" href="#">See Job Opportunities</a>
-            </div>
-        </div>
-    </div> -->
+    </div>
 
     <!-- Featured Pages -->
     <?php $posts = get_field('featured_pages'); ?>

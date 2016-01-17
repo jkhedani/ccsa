@@ -22,11 +22,13 @@ get_header(); ?>
           // End the loop.
           endwhile;
         ?>
+        <?php $title = get_field('title'); ?>
         <?php $phoneNumber = get_field('phone_number'); ?>
         <?php $emailAddress = get_field('email_address'); ?>
         <ul class="contact-info">
-            <li><strong>MAIL</strong> <?php echo $emailAddress; ?></li>
-            <li><strong>TEL</strong> <?php echo $phoneNumber; ?></li>
+            <li class="title"><?php echo $title; ?></li>
+            <li class="mail"><strong>MAIL</strong> <?php echo $emailAddress; ?></li>
+            <li class="phone"><strong>TEL</strong> <?php echo $phoneNumber; ?></li>
         </ul>
 
     <?php

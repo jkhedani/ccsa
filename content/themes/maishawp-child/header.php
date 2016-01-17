@@ -218,4 +218,4 @@
     </div>
 <?php endif; ?>
 
-<div id="site">
+<div id="site container-fluid">

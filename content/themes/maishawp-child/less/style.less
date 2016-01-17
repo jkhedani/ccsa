@@ -67,14 +67,22 @@ a.button,
         font-weight: 400;
     }
 }
-
 .site-branding {
     width: 250px;
+}
+.entry-content a {
+    color: @colorBlue !important;
 }
 
 /**
  * General
  */
+ html {
+   box-sizing: border-box;
+ }
+ *, *:before, *:after {
+   box-sizing: inherit;
+ }
 body {
     max-width: 1400px;
     margin: 0 auto;
@@ -319,14 +327,13 @@ body.page-template-staff-page {
 .featured-two-up {
     .clearfix();
     .member {
-        width: 50%;
-        height: 50vw;
-        max-height: 573px;
-        float: left;
-        position: relative;
+        overflow: hidden;
+        @media(min-width: 768px) {
+            height: 50vw;
+        }
         .featured-image-container {
-            position: absolute;
-            width: 100%;
+            position: relative;
+            z-index: 1;
             height: 100%;
             img {
                 height: 100%;
@@ -335,11 +342,14 @@ body.page-template-staff-page {
             }
         }
         .content {
-            position: absolute;
             width: 100%;
             height: 100%;
+            padding: 0 20px;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 15px;
             text-align: center;
-            padding: 25% 40px 40px 40px;
             color: @colorWhite;
             background: fadeout(@colorGrayDarker, 10%);
             a {
@@ -350,6 +360,18 @@ body.page-template-staff-page {
                 font-size: 31px;
                 margin-top: 0;
             }
+            .vertical-align {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        &:first-child {
+            .content {
+                .vertical-align {
+                    padding: 0 40px 0 20px
+                }
+            }
         }
     }
 }
@@ -358,16 +380,13 @@ body.page-template-staff-page {
  * Featured Three Up
  */
  .featured-three-up {
+     margin-bottom: 15px;
     .clearfix();
     .member {
-         width: 33%;
          height: 33vw;
          max-height: 413px;
-         float: left;
          position: relative;
-         &:first-child {
-             width: 34%;
-         }
+         overflow: hidden;
          &:nth-child(1) .content {
              background: fadeout(@colorGreen, 10%);
          }
@@ -378,6 +397,7 @@ body.page-template-staff-page {
              background: fadeout(@colorPink, 10%);
          }
          .content {
+             margin-top: 15px;
              position: absolute;
              width: 100%;
              height: 100%;
@@ -741,6 +761,16 @@ body.blog {
 }
 
 /**
+ * Get Involved
+ */
+body.page-template-get-involved-page {
+    .aboutpage {
+        margin-bottom: 15px;
+    }
+}
+
+
+/**
  * Staff Page
  */
 body.page-template-staff-page {
@@ -750,20 +780,10 @@ body.page-template-staff-page {
     .staff {
         .clearfix();
         .member {
-            float: left;
             margin: 0;
             position: relative;
-            max-width: 350px;
-            // max-height: 350px;
-            width: 25vw;
-            // height: 25vw;
             .post-thumbnail {
-                // position: absolute;
-
                 margin-bottom: 0;
-
-                // width: 100%;
-                // height: 100%;
                 img {
                     width: 100%;
                     height: auto;
@@ -772,9 +792,9 @@ body.page-template-staff-page {
             }
             .content {
                 position: absolute;
-                width: 400px;
-                height: 600px;
-                right: -400px;
+                width: 100%;
+                height: 100%;
+                left: 0;
                 top: 0;
                 z-index: 2;
                 background: @colorGrayDarker;
@@ -783,7 +803,7 @@ body.page-template-staff-page {
                 opacity: 0;
                 transition: all 0.5s ease;
                 cursor: pointer;
-                padding-top: 25%;
+                padding: 20px;
                 &:hover {
                     opacity: 1.0;
                 }
@@ -801,7 +821,12 @@ body.page-template-staff-page {
     }
 }
 ul.contact-info {
-    list-style: none;
+    margin: 0;
+    height: 138px;
+    li {
+        list-style: none;
+        margin-top: 5px;
+    }
 }
 
 

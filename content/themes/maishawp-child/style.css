@@ -47,9 +47,20 @@ a.button.wire,
 .site-branding {
   width: 250px;
 }
+.entry-content a {
+  color: #4b77be !important;
+}
 /**
  * General
  */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 body {
   max-width: 1400px;
   margin: 0 auto;
@@ -284,15 +295,16 @@ body.page-template-staff-page .entry-content p {
   clear: both;
 }
 .featured-two-up .member {
-  width: 50%;
-  height: 50vw;
-  max-height: 573px;
-  float: left;
-  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .featured-two-up .member {
+    height: 50vw;
+  }
 }
 .featured-two-up .member .featured-image-container {
-  position: absolute;
-  width: 100%;
+  position: relative;
+  z-index: 1;
   height: 100%;
 }
 .featured-two-up .member .featured-image-container img {
@@ -301,11 +313,14 @@ body.page-template-staff-page .entry-content p {
   max-width: none;
 }
 .featured-two-up .member .content {
-  position: absolute;
   width: 100%;
   height: 100%;
+  padding: 0 20px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 15px;
   text-align: center;
-  padding: 25% 40px 40px 40px;
   color: #f9f7fa;
   background: rgba(42, 44, 46, 0.9);
 }
@@ -317,9 +332,20 @@ body.page-template-staff-page .entry-content p {
   font-size: 31px;
   margin-top: 0;
 }
+.featured-two-up .member .content .vertical-align {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.featured-two-up .member:first-child .content .vertical-align {
+  padding: 0 40px 0 20px;
+}
 /**
  * Featured Three Up
  */
+.featured-three-up {
+  margin-bottom: 15px;
+}
 .featured-three-up:before,
 .featured-three-up:after {
   content: " ";
@@ -329,14 +355,10 @@ body.page-template-staff-page .entry-content p {
   clear: both;
 }
 .featured-three-up .member {
-  width: 33%;
   height: 33vw;
   max-height: 413px;
-  float: left;
   position: relative;
-}
-.featured-three-up .member:first-child {
-  width: 34%;
+  overflow: hidden;
 }
 .featured-three-up .member:nth-child(1) .content {
   background: rgba(54, 215, 183, 0.9);
@@ -348,6 +370,7 @@ body.page-template-staff-page .entry-content p {
   background: rgba(216, 61, 125, 0.9);
 }
 .featured-three-up .member .content {
+  margin-top: 15px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -646,6 +669,12 @@ body.blog .gridpost .pagination {
   background: #f3f1f4;
 }
 /**
+ * Get Involved
+ */
+body.page-template-get-involved-page .aboutpage {
+  margin-bottom: 15px;
+}
+/**
  * Staff Page
  */
 body.page-template-staff-page .columns {
@@ -660,11 +689,8 @@ body.page-template-staff-page .staff:after {
   clear: both;
 }
 body.page-template-staff-page .staff .member {
-  float: left;
   margin: 0;
   position: relative;
-  max-width: 350px;
-  width: 25vw;
 }
 body.page-template-staff-page .staff .member .post-thumbnail {
   margin-bottom: 0;
@@ -676,9 +702,9 @@ body.page-template-staff-page .staff .member .post-thumbnail img {
 }
 body.page-template-staff-page .staff .member .content {
   position: absolute;
-  width: 400px;
-  height: 600px;
-  right: -400px;
+  width: 100%;
+  height: 100%;
+  left: 0;
   top: 0;
   z-index: 2;
   background: #2a2c2e;
@@ -687,7 +713,7 @@ body.page-template-staff-page .staff .member .content {
   opacity: 0;
   transition: all 0.5s ease;
   cursor: pointer;
-  padding-top: 25%;
+  padding: 20px;
 }
 body.page-template-staff-page .staff .member .content:hover {
   opacity: 1.0;
@@ -699,7 +725,12 @@ body.page-template-staff-page .staff .member .info ul li {
   font-size: 14px;
 }
 ul.contact-info {
+  margin: 0;
+  height: 138px;
+}
+ul.contact-info li {
   list-style: none;
+  margin-top: 5px;
 }
 /**
  * Site Logo

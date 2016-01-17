@@ -35,20 +35,22 @@ get_header(); ?>
             'no_found_rows'  => true,
         ) );
     ?>
-    <div class="staff">
+    <div class="staff row">
     <?php while ( $child_pages->have_posts() ) : $child_pages->the_post(); ?>
-        <div class="member">
+        <div class="member col-xs-6 col-sm-4">
             <div class="post-thumbnail"><?php the_post_thumbnail(); ?></div>
             <div class="info">
                 <h1><?php the_title(); ?></h1>
+                <?php $title = get_field('title'); ?>
                 <?php $phoneNumber = get_field('phone_number'); ?>
                 <?php $emailAddress = get_field('email_address'); ?>
                 <ul class="contact-info">
+                    <li class="title"><?php echo $title; ?></li>
                     <?php if ( $phoneNumber ) : ?>
-                        <li><i class="fa fa-envelope"></i> <?php echo $emailAddress; ?></li>
+                        <li><!-- <i class="fa fa-envelope"></i>--> <?php echo $emailAddress; ?></li>
                     <?php endif; ?>
                     <?php if ( $emailAddress ) : ?>
-                        <li><i class="fa fa-phone"></i> <?php echo $phoneNumber; ?></li>
+                        <li><!--i class="fa fa-phone"></i>--> <?php echo $phoneNumber; ?></li>
                     <?php endif; ?>
                 </ul>
             </div>
