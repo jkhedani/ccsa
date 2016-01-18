@@ -103,7 +103,7 @@ header#masthead {
     // position: relative;
 }
 .headerblock {
-    width: @colorWhite;
+    background: @colorWhite;
 }
 // # This should be the intro header
 #site {
@@ -146,6 +146,9 @@ hr {
 /**
  * Navigation
  */
+.main-small-navigation div {
+    background: @colorWhite;
+}
 .navigation-main  {
     a {
         padding: 10px;
@@ -246,11 +249,14 @@ button.menu-toggle.anarielgenericon {
 }
 .language-select {
     position: absolute;
-    right: 80px;
+    right: 20px;
     top: 0px;
     color: @colorGrayLighter;
     background: @colorGrayLighter;
     padding: 3px 12px 6px;
+    @media(min-width: 621px) {
+        right: 80px;
+    }
     .language {
         display: inline-block;
         margin-left: 10px;
@@ -786,6 +792,11 @@ body.blog {
     .post-thumbnail {
         background: @colorGrayLighter;
         min-height: 253px;
+    }
+    @media screen and (max-width: 59.6875em) {
+        .post .entry-footer {
+             margin: 10px 0 0 0;
+        }
     }
 
 

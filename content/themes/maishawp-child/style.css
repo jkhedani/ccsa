@@ -82,7 +82,7 @@ header#masthead {
   padding-top: 22px;
 }
 .headerblock {
-  width: #f9f7fa;
+  background: #f9f7fa;
 }
 #site {
   background: #f9f7fa;
@@ -121,6 +121,9 @@ hr {
 /**
  * Navigation
  */
+.main-small-navigation div {
+  background: #f9f7fa;
+}
 .navigation-main a {
   padding: 10px;
 }
@@ -225,11 +228,16 @@ button.menu-toggle.anarielgenericon:before {
 }
 .language-select {
   position: absolute;
-  right: 80px;
+  right: 20px;
   top: 0px;
   color: #f3f1f4;
   background: #f3f1f4;
   padding: 3px 12px 6px;
+}
+@media (min-width: 621px) {
+  .language-select {
+    right: 80px;
+  }
 }
 .language-select .language {
   display: inline-block;
@@ -740,6 +748,11 @@ body.blog.paged .featured-posts {
 body.blog .post-thumbnail {
   background: #f3f1f4;
   min-height: 253px;
+}
+@media screen and (max-width: 59.6875em) {
+  body.blog .post .entry-footer {
+    margin: 10px 0 0 0;
+  }
 }
 body.blog .byline {
   display: none;
