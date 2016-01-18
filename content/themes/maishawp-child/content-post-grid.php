@@ -36,10 +36,7 @@
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
-                the_excerpt( sprintf(
-				wp_kses( __( 'Continue reading %s', 'maisha' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                ) );
+                the_excerpt();
 
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'maisha' ) . '</span>',
