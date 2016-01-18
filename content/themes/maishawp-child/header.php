@@ -41,7 +41,8 @@
 		</div>
     </form>
 
-	<?php echo do_shortcode( '[contact-form-7 id="751" title="Contact form 1"]' ); ?>
+	<?php echo do_shortcode( '[contact-form-7 id="1161" title="Contact form 1"]' ); ?>
+	<?php //echo do_shortcode( '[contact-form-7 id="751" title="Contact form 1"]' ); ?>
 
 	<div class="form-group">
 		<input type="checkbox" name="volunteer" />
@@ -79,13 +80,13 @@
 
 				<!-- CUSTOM: Add Language Switcher here -->
 				<div class="language-select">
-					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
-						<i class="flag en"></i>
-						<!-- <span class="language-name">English</span> -->
+					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=en" class="language">
+						<!-- <i class="flag en"></i> -->
+						<span class="language-name">English</span>
 					</a>
-					<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
-						<i class="flag es"></i>
-						<!-- <span class="language-name">Español</span> -->
+					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=es" class="language">
+						<!-- <i class="flag es"></i> -->
+						<span class="language-name">Español</span>
 					</a>
 				</div>
 
@@ -128,13 +129,13 @@
 
 				<!-- CUSTOM: Add Language Switcher here -->
 				<div class="language-select">
-					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
-						<i class="flag en"></i>
-						<!-- <span class="language-name">English</span> -->
+					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=en" class="language">
+						<!-- <i class="flag en"></i> -->
+						<span class="language-name">English</span>
 					</a>
-					<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
-						<i class="flag es"></i>
-						<!-- <span class="language-name">Español</span> -->
+					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=es" class="language">
+						<!-- <i class="flag es"></i> -->
+						<span class="language-name">Español</span>
 					</a>
 				</div>
 
@@ -179,16 +180,17 @@
                     </div>
 
 					<!-- CUSTOM: Add Language Switcher here -->
-					<div class="language-select">
-						<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
-							<!-- <i class="flag en"></i> -->
-							<span class="language-name">English</span>
-						</a>
-						<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
-							<!-- <i class="flag es"></i> -->
-							<span class="language-name">Español</span>
-						</a>
-					</div>
+    				<div class="language-select">
+    					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=en" class="language">
+    						<!-- <i class="flag en"></i> -->
+    						<span class="language-name">English</span>
+    					</a>
+    					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=es" class="language">
+    						<!-- <i class="flag es"></i> -->
+    						<span class="language-name">Español</span>
+    					</a>
+    				</div>
+
 					<?php if ( has_nav_menu( 'social' ) ) : ?>
 			            <nav id="social-navigation-header" class="social-navigation" role="navigation">
 			                <?php

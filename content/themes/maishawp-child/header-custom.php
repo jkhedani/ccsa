@@ -47,13 +47,13 @@
                 <?php endif; ?>
                 </div>
 
-                <!-- CUSTOM: Add Language Switcher here -->
+				<!-- CUSTOM: Add Language Switcher here -->
 				<div class="language-select">
-					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
+					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=en" class="language">
 						<!-- <i class="flag en"></i> -->
 						<span class="language-name">English</span>
 					</a>
-					<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
+					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=es" class="language">
 						<!-- <i class="flag es"></i> -->
 						<span class="language-name">Español</span>
 					</a>
@@ -96,13 +96,13 @@
                     </div>
                 <?php endif; ?>
 
-                <!-- CUSTOM: Add Language Switcher here -->
+				<!-- CUSTOM: Add Language Switcher here -->
 				<div class="language-select">
-					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
+					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=en" class="language">
 						<!-- <i class="flag en"></i> -->
 						<span class="language-name">English</span>
 					</a>
-					<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
+					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=es" class="language">
 						<!-- <i class="flag es"></i> -->
 						<span class="language-name">Español</span>
 					</a>
@@ -150,11 +150,11 @@
 
                     <!-- CUSTOM: Add Language Switcher here -->
     				<div class="language-select">
-    					<a href="<?php echo get_permalink(); ?>?lang=en" class="language">
+    					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=en" class="language">
     						<!-- <i class="flag en"></i> -->
     						<span class="language-name">English</span>
     					</a>
-    					<a href="<?php echo get_permalink(); ?>?lang=es" class="language">
+    					<a href="<?php echo strtok($_SERVER["REQUEST_URI"],'?'); ?>?lang=es" class="language">
     						<!-- <i class="flag es"></i> -->
     						<span class="language-name">Español</span>
     					</a>
