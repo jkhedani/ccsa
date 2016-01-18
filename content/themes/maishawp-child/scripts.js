@@ -19,9 +19,9 @@ jQuery(document).ready(function($) {
         } else if ( subscribeState === "closed" ) {
             $('.subscribe-form').attr('data-state','open');
             // Slide the site header
-            $('.site-header').css('top','340px');
+            $('.site-header').css('top','375px');
             // Subscribe form
-            $('.subscribe-form').css('height','340px');
+            $('.subscribe-form').css('height','375px');
             $('.subscribe-form').css('padding','40px 20%');
             // Fade in content
             setTimeout(function() {
@@ -34,7 +34,13 @@ jQuery(document).ready(function($) {
      * Show Hidden Fields
      */
     $('input[name="volunteer"]').on('click', function() {
-        $(this).parents('form').find('.volunteer-boxes').show();
+        if ( $(this).prop('checked') ) {
+            $('body').find('#form-subscribe').hide();
+            $('body').find('.wpcf7').show();
+        } else {
+            $('body').find('#form-subscribe').show();
+            $('body').find('.wpcf7').hide();
+        }
     });
 
     /**

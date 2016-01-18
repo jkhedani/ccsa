@@ -63,11 +63,15 @@ get_header(); ?>
 
     <!-- Latest News -->
     <div class="section latest-news-container">
-        <h1 class="section-title">Latest News</h1>
+        <div class="title-container">
+            <h1 class="section-title">Latest News</h1>
+            <a class="view-all" href="/news">View All News &raquo;</a>
+        </div>
         <?php
             $news = new WP_Query(array(
                 'post_type' => 'post',
-                'posts_per_page' => 3
+                'posts_per_page' => 3,
+                'category_name' => array('featured', 'destacado'),
             ));
         ?>
         <div class="latest-news">

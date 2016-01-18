@@ -30,23 +30,25 @@
 		<p>Get action alerts and invites for events in your area!</p>
 	</div>
 
-	<form action="http://www.clicktools.com/survey">
+	<form id="form-subscribe" action="http://www.clicktools.com/survey">
         <input type="hidden" name="iv" value="thvanipsa0t94" />
-		<div class="volunteer-boxes form-group">
-			<input type="text" name="name" placeholder="Your Name" />
-			<input type="text" name="zipcode" placeholder="Your Zipcode" />
-			<input type="text" name="phone" placeholder="Your Phone Number" />
-		</div>
 		<div class="form-group">
-			<input type="text" name="q3" placeholder="Your Email Address" />
+			<input type="text" name="name" placeholder="Your Name" class="form-control" />
+			<input type="text" name="q3" placeholder="Your Email Address" class="form-control" />
+			<input type="text" name="q7" placeholder="Your Zip Code" class="form-control" />
+			<input type="text" name="q9" placeholder="Your Phone Number" class="form-control" />
 			<button>Subscribe</button>
 		</div>
-		<div class="form-group">
-			<input type="checkbox" name="volunteer" />
-			<label>I want to volunteer in my area</label>
-		</div>
-
     </form>
+
+	<?php echo do_shortcode( '[contact-form-7 id="751" title="Contact form 1"]' ); ?>
+
+	<div class="form-group">
+		<input type="checkbox" name="volunteer" />
+		<label>I want to be contacted by an Organizer in my area</label>
+	</div>
+
+
 </div>
 
 <?php if(get_theme_mod('maisha_header_layout') == 'standard-header') : ?>
