@@ -102,6 +102,12 @@ get_header(); ?>
     <?php endif; ?>
 
     <!-- About Video -->
+    <div class="about-video row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <?php $featuredVideoID = get_field('featured_video'); ?>
+            <?php echo  wp_oembed_get( 'http://www.youtube.com/watch?v=' . $featuredVideoID ); // height, width ?>
+        </div>
+    </div>
 
     <!-- Our Team Teaser -->
     <?php

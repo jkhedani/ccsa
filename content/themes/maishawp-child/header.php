@@ -33,7 +33,7 @@
 	<form id="form-subscribe" action="http://www.clicktools.com/survey">
         <input type="hidden" name="iv" value="thvanipsa0t94" />
 		<div class="form-group">
-			<input type="text" name="name" placeholder="Your Name" class="form-control" />
+			<input type="text" name="q1" placeholder="Your Name" class="form-control" />
 			<input type="text" name="q3" placeholder="Your Email Address" class="form-control" />
 			<input type="text" name="q7" placeholder="Your Zip Code" class="form-control" />
 			<input type="text" name="q9" placeholder="Your Phone Number" class="form-control" />

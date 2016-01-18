@@ -62,10 +62,14 @@ get_header(); ?>
 
 
     <!-- Latest News -->
+    <?php
+        $moreNewsTitle = get_field('more_news_link_title');
+        $moreNewsLink = get_field('more_news_link');
+    ?>
     <div class="section latest-news-container">
         <div class="title-container">
             <h1 class="section-title">Latest News</h1>
-            <a class="view-all" href="/news">View All News &raquo;</a>
+            <a class="view-all" href="<?php echo $moreNewsLink; ?>"><?php echo $moreNewsTitle; ?></a>
         </div>
         <?php
             $news = new WP_Query(array(

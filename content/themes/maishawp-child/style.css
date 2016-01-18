@@ -673,6 +673,10 @@ body.page-template-about-page .featured-pages .featured-page:first-child {
 body.page-template-about-page .featured-pages .featured-page .featured-page-content {
   text-align: center;
 }
+body.page-template-about-page .about-video iframe {
+  width: 100%;
+  height: 40vw;
+}
 body.page-template-about-page .footer-teaser {
   padding: 30px;
   color: #2a2c2e;
@@ -742,6 +746,7 @@ body.blog .byline {
 }
 body.blog .gridpost .pagination {
   background: #f3f1f4;
+  width: 100%;
 }
 /**
  * Get Involved
@@ -891,6 +896,9 @@ ul.contact-info li {
 }
 .footer .widget {
   color: #626468;
+}
+footer#colophon {
+  font-size: 400;
 }
 footer#colophon .site-info {
   padding-top: 40px;
