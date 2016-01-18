@@ -36,7 +36,7 @@
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
-                the_excerpt();
+	        echo substr(get_the_excerpt(), 0, 110);
 
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'maisha' ) . '</span>',
