@@ -897,8 +897,11 @@ ul.contact-info li {
 .footer .widget {
   color: #626468;
 }
+.more-than-three-widgets .widget {
+  width: 29.33333333%;
+}
 footer#colophon {
-  font-size: 400;
+  font-weight: 400;
 }
 footer#colophon .site-info {
   padding-top: 40px;
