@@ -113,7 +113,8 @@ get_header(); ?>
     <?php
         $staffPages = new WP_Query(array(
             'post_type' => 'page',
-            'post_parent' => 412 // Our Team page
+            'post_parent' => 412, // Our Team page
+            'posts_per_page' => 7
         ));
     ?>
     <div class="footer-teaser">
@@ -135,7 +136,7 @@ get_header(); ?>
             <div class="teaser-image placeholder blue"></div>
             <div class="teaser-image placeholder pink"></div>
             <div class="teaser-image placeholder green"></div>
-            <div class="teaser-image placeholder gray"></div>
+            <!-- <div class="teaser-image placeholder gray"></div> -->
             <?php wp_reset_postdata(); ?>
         </div>
     </div>
