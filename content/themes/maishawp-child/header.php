@@ -25,32 +25,58 @@
 
 <!-- CUSTOM: Subscribe form -->
 <div class="subscribe-form" data-state="closed">
-	<div class="text">
-		<h1>Sign up</h1>
-		<p>Get action alerts and invites for events in your area!</p>
-	</div>
 
-	<form id="form-subscribe" action="http://www.clicktools.com/survey">
-        <input type="hidden" name="iv" value="thvanipsa0t94" />
-		<div class="form-group">
-			<input type="text" name="q1" placeholder="Your Name" class="form-control" />
-			<input type="text" name="q3" placeholder="Your Email Address" class="form-control" />
-			<input type="text" name="q7" placeholder="Your Zip Code" class="form-control" />
-			<input type="text" name="q9" placeholder="Your Phone Number" class="form-control" />
-			<button>Subscribe</button>
+
+	<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+
+		<div class="text">
+			<h1>¡Quiero suscribirme</h1>
+			<p>¡Quiero suscribirme para recibir noticias, alertas de acción e invitaciones para eventos en mi área!</p>
 		</div>
-    </form>
+		<form id="form-subscribe" action="http://www.clicktools.com/survey">
+			<input type="hidden" name="iv" value="thvanipsa0t94" />
+			<div class="form-group">
+				<input type="text" name="q1" placeholder="Nombre" class="form-control" />
+				<input type="text" name="q2" placeholder="Apellido" class="form-control" />
+				<input type="text" name="q3" placeholder="Email" class="form-control" />
+				<input type="text" name="q7" placeholder="Código Postal" class="form-control" />
+				<button>Submit</button>
+			</div>
+		</form>
+		<?php echo do_shortcode( '[contact-form-7 id="1337" title="Contact form 1 - ES"]' ); ?>
+		<?php //echo do_shortcode( '[contact-form-7 id="751" title="Contact form 1"]' ); ?>
+		<div class="form-group">
+			<input type="checkbox" name="volunteer" />
+			<label>Quiero que un organizador de mi área me contacte.</label>
+		</div>
 
-	<?php echo do_shortcode( '[contact-form-7 id="1161" title="Contact form 1"]' ); ?>
-	<?php //echo do_shortcode( '[contact-form-7 id="751" title="Contact form 1"]' ); ?>
+	<?php else: ?>
 
-	<div class="form-group">
-		<input type="checkbox" name="volunteer" />
-		<label>I want to be contacted by an Organizer in my area</label>
-	</div>
+		<div class="text">
+			<h1>Sign up</h1>
+			<p>Get action alerts and invites for events in your area!</p>
+		</div>
+		<form id="form-subscribe" action="http://www.clicktools.com/survey">
+			<input type="hidden" name="iv" value="thvanipsa0t94" />
+			<div class="form-group">
+				<input type="text" name="q1" placeholder="First Name" class="form-control" />
+				<input type="text" name="q2" placeholder="Last Name" class="form-control" />
+				<input type="text" name="q3" placeholder="Your Email Address" class="form-control" />
+				<input type="text" name="q7" placeholder="Your Zip Code" class="form-control" />
+				<button>Submit</button>
+			</div>
+		</form>
+		<?php echo do_shortcode( '[contact-form-7 id="1161" title="Contact form 1"]' ); ?>
+		<?php //echo do_shortcode( '[contact-form-7 id="751" title="Contact form 1"]' ); ?>
+		<div class="form-group">
+			<input type="checkbox" name="volunteer" />
+			<label>I want to be contacted by an Organizer in my area</label>
+		</div>
+
+	<?php endif; ?>
 
 
-</div>
+</div><!-- subscribe-form -->
 
 <?php if(get_theme_mod('maisha_header_layout') == 'standard-header') : ?>
     <div class="headerblock standard">
