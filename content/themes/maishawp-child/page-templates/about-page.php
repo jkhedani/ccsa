@@ -113,7 +113,7 @@ get_header(); ?>
     <?php
         $staffPages = new WP_Query(array(
             'post_type' => 'page',
-            'post_parent' => 412, // Our Team page
+            'page_id' => 412, // Our Team page
             'posts_per_page' => 10
         ));
     ?>
@@ -129,9 +129,7 @@ get_header(); ?>
         </div>
         <div class="teaser-images">
             <?php while ($staffPages->have_posts()) : $staffPages->the_post(); ?>
-                <div class="teaser-image">
-                    <?php the_post_thumbnail(); ?>
-                </div>
+                <?php the_post_thumbnail(); ?>
             <?php endwhile; ?>
             <!-- <div class="teaser-image placeholder blue"></div>
             <div class="teaser-image placeholder pink"></div>
