@@ -3,7 +3,16 @@ jQuery(document).ready(function($) {
     /**
      * Trigger subscribe container
      */
-    $('li#menu-item-537').on('click', function() {
+    $('a[href="#subscribe"]').on('click', function() {
+        // console.log('adsf');
+    });
+    $('li#menu-item-537, a[href="#subscribe"]').on('click', function(e) {
+        e.preventDefault();
+
+        // Scroll To Top
+        window.scrollTo(0,0);
+
+        // Toggle State
         var subscribeState = $('.subscribe-form').attr('data-state');
         if ( subscribeState === "open" ) {
             $('.subscribe-form').attr('data-state','closed');
