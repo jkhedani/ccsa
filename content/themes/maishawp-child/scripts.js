@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
     $('a[href="#subscribe"]').on('click', function() {
         // console.log('adsf');
     });
-    $('li#menu-item-537, a[href="#subscribe"]').on('click', function(e) {
+    $('li#menu-item-537, li#menu-item-556, a[href="#subscribe"]').on('click', function(e) {
         e.preventDefault();
 
         // Scroll To Top
