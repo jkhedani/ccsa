@@ -17,7 +17,7 @@
 	<?php endif; ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<script type="text/javascript" src="https://www.votervoice.net/Scripts/PAMAAAEAAAA/Plugin.js"></script>
+	<!-- <script type="text/javascript" src="https://www.votervoice.net/Scripts/PAMAAAEAAAA/Plugin.js"></script> -->
 	<?php wp_head(); ?>
 </head>
 
