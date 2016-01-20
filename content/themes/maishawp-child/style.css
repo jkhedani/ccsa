@@ -934,6 +934,9 @@ footer#colophon .site-info {
 footer#colophon ul li {
   line-height: 1.7;
 }
+footer#colophon p {
+  margin-bottom: 1.1em;
+}
 footer#colophon a {
   color: #0079c2;
 }

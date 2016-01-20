@@ -32,7 +32,7 @@ get_header(); ?>
             <h2 class="voter-voice-title"><?php echo get_field('voter_voice_title'); ?></h2>
             <p class="voter-voice-text"><?php echo get_field('voter_voice_text'); ?></p>
         </div>
-        <a class="button" href="<?php echo get_field('voter_voice_link'); ?>">Take Action</a>
+        <a class="button" href="<?php echo get_field('voter_voice_link'); ?>"><?php echo get_field('voter_voice_link_title'); ?></a>
     </div>
 
 
