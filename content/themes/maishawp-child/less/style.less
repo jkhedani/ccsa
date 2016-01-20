@@ -162,6 +162,15 @@ hr {
     // Subscribe Button
     li:nth-child(4) {
         border: 1px solid @colorGray;
+        &:hover {
+            border-color: @colorYellow;
+            background: @colorYellow;
+            transition: all 0.5s ease;
+            a {
+                color: @colorGrayDarker;
+
+            }
+        }
     }
 }
 .subscribe-form {
@@ -1008,8 +1017,14 @@ ul.contact-info {
 }
 footer#colophon  {
     font-weight: 400;
+    font-size: 12px;
     .site-info {
         padding-top: 40px;
+    }
+    ul {
+        li {
+            line-height: 1.7;
+        }
     }
     a {
         color: @colorRoyal;
