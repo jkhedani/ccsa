@@ -43,6 +43,7 @@ jQuery(document).ready(function($) {
      * Show Hidden Fields
      */
     $('input[name="volunteer"]').on('click', function() {
+        // Show/Hide Form
         if ( $(this).prop('checked') ) {
             $('body').find('#form-subscribe').hide();
             $('body').find('.wpcf7').show();
@@ -50,6 +51,11 @@ jQuery(document).ready(function($) {
             $('body').find('#form-subscribe').show();
             $('body').find('.wpcf7').hide();
         }
+        // Copy inputs from previous form
+        $('input[name="first-name"]').val($('input[name="q1"]').val());
+        $('input[name="last-name"]').val($('input[name="q2"]').val());
+        $('input[name="your-email"]').val($('input[name="q3"]').val());
+        $('input[name="your-zipcode"]').val($('input[name="q7"]').val());
     });
 
     /**
