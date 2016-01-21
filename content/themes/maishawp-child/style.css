@@ -656,6 +656,9 @@ body.home .featured-pages .member .post-thumbnail img {
 }
 .section .title-container .view-all {
   float: right;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 /**
  * About Page
