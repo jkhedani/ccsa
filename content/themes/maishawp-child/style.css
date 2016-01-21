@@ -725,6 +725,7 @@ body.page-template-about-page .featured-pages .featured-page {
   width: 100%;
   float: left;
   margin-left: 0;
+  padding: 0 80px;
 }
 body.page-template-about-page .featured-pages .featured-page:first-child {
   margin-left: 0;
@@ -733,11 +734,13 @@ body.page-template-about-page .featured-pages .featured-page:first-child {
   body.page-template-about-page .featured-pages .featured-page {
     width: 32%;
     margin-left: 2%;
+    padding: 0;
   }
 }
 @media (min-width: 768px) {
   body.page-template-about-page .featured-pages .featured-page .featured-page-image {
-    height: 290px;
+    height: 28vw;
+    max-height: 444px;
     overflow: hidden;
   }
   body.page-template-about-page .featured-pages .featured-page .featured-page-image img {
@@ -815,7 +818,13 @@ body.blog.paged .featured-posts {
 }
 body.blog .post-thumbnail {
   background: #f3f1f4;
-  min-height: 253px;
+  max-height: 365px;
+  overflow: hidden;
+}
+body.blog .post-thumbnail img {
+  height: 100%;
+  width: auto;
+  max-width: none;
 }
 @media screen and (max-width: 59.6875em) {
   body.blog .post .entry-footer {
@@ -850,7 +859,7 @@ body.page-template-staff-page .staff:after {
   clear: both;
 }
 body.page-template-staff-page .staff .member {
-  margin: 0;
+  margin: 30px 0 0 0;
   position: relative;
 }
 body.page-template-staff-page .staff .member .post-thumbnail {
@@ -875,9 +884,6 @@ body.page-template-staff-page .staff .member .content {
   transition: all 0.5s ease;
   cursor: pointer;
   padding: 20px;
-}
-body.page-template-staff-page .staff .member .content:hover {
-  opacity: 1.0;
 }
 body.page-template-staff-page .staff .member .info {
   padding: 20px;
