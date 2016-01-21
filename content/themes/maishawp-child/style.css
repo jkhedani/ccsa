@@ -410,6 +410,7 @@ body.page-template-staff-page .entry-content p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  width: 100%;
 }
 .featured-two-up .member:first-child .content .vertical-align {
   padding: 0 40px 0 20px;
