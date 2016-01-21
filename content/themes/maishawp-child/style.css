@@ -281,6 +281,10 @@ button.menu-toggle.anarielgenericon:before {
 /**
  * Soliliquy Slider
  */
+.soliloquy-container,
+.soliloquy-container * {
+  font-family: 'Raleway', arial, sans-serif;
+}
 .soliloquy-container:hover,
 .soliloquy-container *:hover {
   background: none;
