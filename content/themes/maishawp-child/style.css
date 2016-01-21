@@ -283,7 +283,7 @@ button.menu-toggle.anarielgenericon:before {
  */
 .soliloquy-container,
 .soliloquy-container * {
-  font-family: 'Raleway', arial, sans-serif;
+  font-family: 'Raleway', arial, sans-serif !important;
 }
 .soliloquy-container:hover,
 .soliloquy-container *:hover {
