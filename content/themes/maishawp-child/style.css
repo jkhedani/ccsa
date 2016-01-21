@@ -281,10 +281,6 @@ button.menu-toggle.anarielgenericon:before {
 /**
  * Soliliquy Slider
  */
-.soliloquy-container,
-.soliloquy-container * {
-  font-family: 'Raleway', arial, sans-serif !important;
-}
 .soliloquy-container:hover,
 .soliloquy-container *:hover {
   background: none;
@@ -308,8 +304,12 @@ button.menu-toggle.anarielgenericon:before {
   line-height: 1.2 !important;
 }
 .page-template-front-page-one .soliloquy-container p {
+  font-family: 'Raleway', arial, sans-serif !important;
   line-height: 1.5 !important;
   margin: 10px 0;
+}
+.page-template-front-page-one .soliloquy-container a {
+  font-family: 'Raleway', arial, sans-serif !important;
 }
 /**
  * General
