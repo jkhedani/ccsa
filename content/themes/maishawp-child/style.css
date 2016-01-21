@@ -175,6 +175,7 @@ hr {
   margin-right: 11px;
 }
 .subscribe-form form .form-group {
+  margin: 0;
   clear: both;
 }
 .subscribe-form .wpcf7 {

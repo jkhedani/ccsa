@@ -30,8 +30,8 @@
 	<?php if(ICL_LANGUAGE_CODE=='es'): ?>
 
 		<div class="text">
-			<h1>¡Quiero suscribirme</h1>
-			<p>¡Quiero suscribirme para recibir noticias, alertas de acción e invitaciones para eventos en mi área!</p>
+			<h1>Inscríbase</h1>
+			<p>¡Recibe nuestro boletín mensual, invitaciones a eventos y alertas de acción!</p>
 		</div>
 		<form id="form-subscribe" action="http://www.clicktools.com/survey">
 			<input type="hidden" name="iv" value="thvanipsa0t94" />
@@ -53,8 +53,8 @@
 	<?php else: ?>
 
 		<div class="text">
-			<h1>Sign up</h1>
-			<p>Get action alerts and invites for events in your area!</p>
+			<h1>Sign Up</h1>
+			<p>Get our monthly newsletter, event invitations and action alerts!</p>
 		</div>
 		<form id="form-subscribe" action="http://www.clicktools.com/survey">
 			<input type="hidden" name="iv" value="thvanipsa0t94" />
