@@ -21,6 +21,62 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<!-- CUSTOM: Subscribe form -->
+<div class="subscribe-form" data-state="closed">
+
+
+	<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+
+		<div class="text">
+			<h1>Inscríbase</h1>
+			<p>¡Recibe nuestro boletín mensual, invitaciones a eventos y alertas de acción!</p>
+		</div>
+		<form id="form-subscribe" action="http://www.clicktools.com/survey">
+			<input type="hidden" name="iv" value="thvanipsa0t94" />
+			<div class="form-group">
+				<input type="text" name="q1" placeholder="Nombre" class="form-control" />
+				<input type="text" name="q2" placeholder="Apellido" class="form-control" />
+				<input type="text" name="q3" placeholder="Email" class="form-control" />
+				<input type="text" name="q7" placeholder="Código Postal" class="form-control" />
+				<button>Submit</button>
+			</div>
+		</form>
+		<?php echo do_shortcode( '[contact-form-7 id="1337" title="Contact form 1 - ES"]' ); ?>
+		<?php //echo do_shortcode( '[contact-form-7 id="751" title="Contact form 1"]' ); ?>
+		<div class="form-group">
+			<input type="checkbox" name="volunteer" />
+			<label>Quiero que un organizador de mi área me contacte.</label>
+		</div>
+
+	<?php else: ?>
+
+		<div class="text">
+			<h1>Sign Up</h1>
+			<p>Get our monthly newsletter, event invitations and action alerts!</p>
+		</div>
+		<form id="form-subscribe" action="http://www.clicktools.com/survey">
+			<input type="hidden" name="iv" value="thvanipsa0t94" />
+			<div class="form-group">
+				<input type="text" name="q1" placeholder="First Name" class="form-control" />
+				<input type="text" name="q2" placeholder="Last Name" class="form-control" />
+				<input type="text" name="q3" placeholder="Your Email Address" class="form-control" />
+				<input type="text" name="q7" placeholder="Your Zip Code" class="form-control" />
+				<button>Submit</button>
+			</div>
+		</form>
+		<?php echo do_shortcode( '[contact-form-7 id="1161" title="Contact form 1"]' ); ?>
+		<?php //echo do_shortcode( '[contact-form-7 id="751" title="Contact form 1"]' ); ?>
+		<div class="form-group">
+			<input type="checkbox" name="volunteer" />
+			<label>I want to be contacted by an Organizer in my area</label>
+		</div>
+
+	<?php endif; ?>
+
+
+</div><!-- subscribe-form -->
+
 <?php if(get_theme_mod('maisha_header_layout') == 'standard-header') : ?>
     <div class="headerblock standard">
         <div class="content site-content">
@@ -58,6 +114,20 @@
 						<span class="language-name">Español</span>
 					</a>
 				</div>
+
+				<?php if ( has_nav_menu( 'social' ) ) : ?>
+					<nav id="social-navigation-header" class="social-navigation" role="navigation">
+						<?php
+							// Social links navigation menu.
+							wp_nav_menu( array(
+								'theme_location' => 'social',
+								'depth'          => 1,
+								'link_before'    => '<span class="screen-reader-text">',
+								'link_after'     => '</span>',
+							) );
+						?>
+					</nav><!-- .social-navigation -->
+				<?php endif; ?>
 
             </header><!-- .site-header -->
         </div><!-- .site-content -->
@@ -107,6 +177,20 @@
 						<span class="language-name">Español</span>
 					</a>
 				</div>
+
+				<?php if ( has_nav_menu( 'social' ) ) : ?>
+					<nav id="social-navigation-header" class="social-navigation" role="navigation">
+						<?php
+							// Social links navigation menu.
+							wp_nav_menu( array(
+								'theme_location' => 'social',
+								'depth'          => 1,
+								'link_before'    => '<span class="screen-reader-text">',
+								'link_after'     => '</span>',
+							) );
+						?>
+					</nav><!-- .social-navigation -->
+				<?php endif; ?>
 
             </header><!-- .site-header -->
         </div><!-- .site-content -->
@@ -159,6 +243,20 @@
     						<span class="language-name">Español</span>
     					</a>
     				</div>
+
+					<?php if ( has_nav_menu( 'social' ) ) : ?>
+			            <nav id="social-navigation-header" class="social-navigation" role="navigation">
+			                <?php
+			                    // Social links navigation menu.
+			                    wp_nav_menu( array(
+			                        'theme_location' => 'social',
+			                        'depth'          => 1,
+			                        'link_before'    => '<span class="screen-reader-text">',
+			                        'link_after'     => '</span>',
+			                    ) );
+			                ?>
+			            </nav><!-- .social-navigation -->
+			        <?php endif; ?>
 
                 </header><!-- .site-header -->
             </div><!-- .site-content -->

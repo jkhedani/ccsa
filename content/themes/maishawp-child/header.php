@@ -22,7 +22,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-
 <!-- CUSTOM: Subscribe form -->
 <div class="subscribe-form" data-state="closed">
 
