@@ -118,15 +118,6 @@ get_header(); ?>
         ));
     ?>
     <div class="footer-teaser">
-        <div class="teaser-content">
-            <?php $FooterCtaTitle = get_field('footer_title'); ?>
-            <?php $FooterCtaBlurb = get_field('footer_blurb'); ?>
-            <?php $FooterCtaText = get_field('footer_cta_text'); ?>
-            <?php $FooterCtaLink = get_field('footer_cta_link'); ?>
-            <h2><?php echo $FooterCtaTitle; ?></h2>
-            <p><?php echo $FooterCtaBlurb; ?></p>
-            <a href="<?php echo $FooterCtaLink; ?>" class="button wire"><?php echo $FooterCtaText; ?></a>
-        </div>
         <div class="teaser-images">
             <?php while ($staffPages->have_posts()) : $staffPages->the_post(); ?>
                 <?php the_post_thumbnail(); ?>
@@ -137,6 +128,16 @@ get_header(); ?>
             <!-- <div class="teaser-image placeholder gray"></div> -->
             <?php wp_reset_postdata(); ?>
         </div>
+        <div class="teaser-content">
+            <?php $FooterCtaTitle = get_field('footer_title'); ?>
+            <?php $FooterCtaBlurb = get_field('footer_blurb'); ?>
+            <?php $FooterCtaText = get_field('footer_cta_text'); ?>
+            <?php $FooterCtaLink = get_field('footer_cta_link'); ?>
+            <h2><?php echo $FooterCtaTitle; ?></h2>
+            <p><?php echo $FooterCtaBlurb; ?></p>
+            <a href="<?php echo $FooterCtaLink; ?>" class="button wire"><?php echo $FooterCtaText; ?></a>
+        </div>
+
     </div>
 
 <?php get_footer(); ?>
