@@ -68,7 +68,12 @@ get_header(); ?>
     ?>
     <div class="section latest-news-container">
         <div class="title-container">
-            <h1 class="section-title">Latest News</h1>
+
+            <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                <h1 class="section-title">Noticias Recientes</h1>
+            <?php else: ?>
+                <h1 class="section-title">Latest News</h1>
+            <?php endif; ?>
             <a class="view-all" href="<?php echo $moreNewsLink; ?>"><?php echo $moreNewsTitle; ?></a>
         </div>
         <?php
@@ -86,7 +91,11 @@ get_header(); ?>
                     </div>
                     <h2><?php the_title(); ?></h2>
                     <p><?php echo substr(get_the_excerpt(), 0, 110); ?>...</p>
-                    <a class="button wire" href="<?php the_permalink(); ?>">Read more</a>
+                    <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                        <a class="button wire" href="<?php the_permalink(); ?>">Lea más</a>
+                    <?php else: ?>
+                        <a class="button wire" href="<?php the_permalink(); ?>">Read more</a>
+                    <?php endif; ?>
                 </div>
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>

@@ -49,7 +49,7 @@ ga('send', 'pageview');
 				<input type="text" name="q2" placeholder="Apellido" class="form-control" />
 				<input type="text" name="q3" placeholder="Email" class="form-control" />
 				<input type="text" name="q7" placeholder="Código Postal" class="form-control" />
-				<button>Submit</button>
+				<button>Enviar</button>
 			</div>
 		</form>
 		<?php echo do_shortcode( '[contact-form-7 id="1337" title="Contact form 1 - ES"]' ); ?>
