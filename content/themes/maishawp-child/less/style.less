@@ -316,9 +316,14 @@ button.menu-toggle.anarielgenericon {
     left: 80px !important;
 }
 .soliloquy-caption-inside {
-    height: 250px !important;
+    height: 200px !important;
     text-align: left !important;
     padding: 20px !important;
+    @media (max-width: 600px) {
+        text-align: center !important;
+        // background: @colorWhite !important;
+        // color: @colorGrayDarker !important;
+    }
 }
 .page-template-front-page-one .soliloquy-container h1 {
     color: #f5d151 !important;
@@ -332,6 +337,17 @@ button.menu-toggle.anarielgenericon {
 }
 .page-template-front-page-one .soliloquy-container a {
     font-family: 'Raleway', arial, sans-serif !important;
+}
+.soliloquy-container .soliloquy-caption {
+// .soliloquy-container .soliloquy-controls-auto
+// .soliloquy-container .soliloquy-pager {
+    @media (max-width: 600px) {
+        width: 80% !important;
+        top: 10% !important;
+        left: 10% !important;
+        display: block !important;
+        // position: relative !important;
+    }
 }
 
 /**
@@ -586,6 +602,13 @@ body.home .voter-voice.strip-cta {
         padding: 12px 42px;
         float: right;
         transition: all 0.5s ease;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        @media(min-width: 768px) {
+            width: auto;
+            margin-top: 0;
+        }
         &:hover {
             text-decoration: none;
         }

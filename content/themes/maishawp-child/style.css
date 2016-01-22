@@ -294,9 +294,14 @@ button.menu-toggle.anarielgenericon:before {
   left: 80px !important;
 }
 .soliloquy-caption-inside {
-  height: 250px !important;
+  height: 200px !important;
   text-align: left !important;
   padding: 20px !important;
+}
+@media (max-width: 600px) {
+  .soliloquy-caption-inside {
+    text-align: center !important;
+  }
 }
 .page-template-front-page-one .soliloquy-container h1 {
   color: #f5d151 !important;
@@ -310,6 +315,14 @@ button.menu-toggle.anarielgenericon:before {
 }
 .page-template-front-page-one .soliloquy-container a {
   font-family: 'Raleway', arial, sans-serif !important;
+}
+@media (max-width: 600px) {
+  .soliloquy-container .soliloquy-caption {
+    width: 80% !important;
+    top: 10% !important;
+    left: 10% !important;
+    display: block !important;
+  }
 }
 /**
  * General
@@ -570,6 +583,15 @@ body.home .voter-voice.strip-cta .button {
   padding: 12px 42px;
   float: right;
   transition: all 0.5s ease;
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+@media (min-width: 768px) {
+  body.home .voter-voice.strip-cta .button {
+    width: auto;
+    margin-top: 0;
+  }
 }
 body.home .voter-voice.strip-cta .button:hover {
   text-decoration: none;
