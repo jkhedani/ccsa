@@ -975,8 +975,12 @@ body.page-template-staff-page {
     .staff {
         .clearfix();
         .member {
+            height: 80vw;
             margin: 30px 0 0 0;
             position: relative;
+            @media(min-width: 768px) {
+                height: 50vw;
+            }
             .post-thumbnail {
                 margin-bottom: 0;
                 img {
