@@ -287,12 +287,15 @@ button.menu-toggle.anarielgenericon:before {
 }
 @media (max-width: 600px) {
   .soliloquy-container .soliloquy-image {
-    max-width: 150% !important;
+    max-width: 164% !important;
   }
+}
+.soliloquy-viewport {
+  min-height: 240px !important;
 }
 .soliloquy-caption {
   width: 40% !important;
-  top: 80px !important;
+  top: 10% !important;
   left: 80px !important;
 }
 .soliloquy-caption-inside {
