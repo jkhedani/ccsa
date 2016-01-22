@@ -820,7 +820,7 @@ body.page-template-about-page .footer-teaser:after {
 }
 body.page-template-about-page .footer-teaser .teaser-content {
   width: 100%;
-  padding: 60px 30px;
+  padding: 0 30px 60px;
   text-align: center;
   margin: 0 auto;
 }
