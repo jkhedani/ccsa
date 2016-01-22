@@ -331,9 +331,10 @@ button.menu-toggle.anarielgenericon:before {
 @media (max-width: 600px) {
   .soliloquy-container .soliloquy-caption {
     width: 80% !important;
-    top: 10% !important;
+    top: 50% !important;
     left: 10% !important;
     display: block !important;
+    transform: translateY(-50%);
   }
 }
 /**
