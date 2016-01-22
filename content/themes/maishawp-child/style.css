@@ -285,15 +285,20 @@ button.menu-toggle.anarielgenericon:before {
 .soliloquy-container *:hover {
   background: none;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .soliloquy-container .soliloquy-image {
-    width: 620px;
+    width: auto;
+    height: 330px !important;
     max-width: none !important;
   }
 }
 .soliloquy-viewport {
-  height: auto !important;
   min-height: 240px !important;
+}
+@media (max-width: 768px) {
+  .soliloquy-viewport {
+    height: 330px !important;
+  }
 }
 .soliloquy-caption {
   width: 40% !important;

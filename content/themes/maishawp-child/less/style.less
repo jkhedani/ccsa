@@ -313,13 +313,16 @@ button.menu-toggle.anarielgenericon {
     // height: 100vw;
 }
 .soliloquy-container .soliloquy-image {
-    @media(max-width: 600px ) {
-        width: 620px;
+    @media(max-width: 768px ) {
+        width: auto;
+        height: 330px !important;
         max-width: none !important;
     }
 }
 .soliloquy-viewport {
-    height: auto !important;
+    @media(max-width: 768px ) {
+    height: 330px !important;
+    }
     min-height: 240px !important;
 }
 .soliloquy-caption {

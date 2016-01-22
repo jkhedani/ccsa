@@ -38,7 +38,7 @@ get_header(); ?>
     <div class="staff row">
     <?php while ( $child_pages->have_posts() ) : $child_pages->the_post(); ?>
         <div class="member col-xs-6 col-sm-3">
-            <div class="post-thumbnail"><?php the_post_thumbnail('thumbnail'); ?></div>
+            <div class="post-thumbnail"><?php the_post_thumbnail('medium'); ?></div>
             <div class="info">
                 <h1><?php the_title(); ?></h1>
                 <?php $title = get_field('title'); ?>
