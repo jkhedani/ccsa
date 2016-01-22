@@ -53,7 +53,7 @@ get_header(); ?>
                     <div class="featured-image-container">
                         <?php the_post_thumbnail(); ?>
                     </div>
-                    <div class="content col-sm-6">
+                    <div class="content">
                         <div class="vertical-align">
                             <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
                             <hr />
