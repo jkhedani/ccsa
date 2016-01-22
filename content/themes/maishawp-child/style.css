@@ -287,7 +287,7 @@ button.menu-toggle.anarielgenericon:before {
 }
 @media (max-width: 600px) {
   .soliloquy-container .soliloquy-image {
-    max-width: none !important;
+    max-width: 150% !important;
   }
 }
 .soliloquy-caption {
