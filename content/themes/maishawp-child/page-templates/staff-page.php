@@ -28,7 +28,7 @@ get_header(); ?>
     <?php
         $child_pages = new WP_Query( array(
             'post_type'      => 'page',
-            'orderby'        => 'menu_order',
+            'orderby'        => 'title',
             'order'          => 'ASC',
             'post_parent'    => $post->ID,
             'posts_per_page' => 999,
