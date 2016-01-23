@@ -206,7 +206,8 @@ get_header( 'custom' ); ?>
                             $featuredPostIDs = array();
                             $featuredPosts = new WP_Query( array(
                                 'category_name' => 'featured',
-                                'post_type' => 'post'
+                                'post_type' => 'post',
+                                'orderby' => 'date'
                             ));
                         ?>
                         <?php
@@ -222,7 +223,8 @@ get_header( 'custom' ); ?>
                         <?php
                             $featuredPosts = new WP_Query( array(
                                 'post_type'     => 'post',
-                                'post__not_in'  => $featuredPostIDs
+                                'post__not_in'  => $featuredPostIDs,
+                                'orderby' => 'date'
                             ));
                         ?>
                         <?php while($featuredPosts->have_posts()) : $featuredPosts->the_post(); ?>
