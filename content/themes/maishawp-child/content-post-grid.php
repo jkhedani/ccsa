@@ -74,9 +74,9 @@
 
 				$time_string = sprintf( $time_string,
 					esc_attr( get_the_date( 'c' ) ),
-					esc_html__( get_the_date(), 'maisha' ),
+					esc_html( get_the_date(), 'maisha' ),
 					esc_attr( get_the_modified_date( 'c' ) ),
-					esc_html__( get_the_modified_date(), 'maisha' )
+					esc_html( get_the_modified_date(), 'maisha' )
 				);
 
 				printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
@@ -84,6 +84,7 @@
 					esc_url( get_permalink() ),
 					$time_string
 				);
+
 			}
 
 			if ( 'post' == get_post_type() ) {

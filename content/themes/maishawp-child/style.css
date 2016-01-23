@@ -1008,6 +1008,14 @@ ul.contact-info li {
   margin-top: 5px;
 }
 /**
+ * 404
+ */
+@media (min-width: 956px) {
+  body.error404 .fixed {
+    padding-top: 80px;
+  }
+}
+/**
  * Site Logo
  */
 .site-logo {
