@@ -12,6 +12,7 @@
         wp_enqueue_style( 'prefix-font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array('child-style'), '4.5.0' );
 
         // Scripts
+        wp_enqueue_script( 'bootstrap-tooltips', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ));
         wp_enqueue_script( 'theme-script', get_stylesheet_directory_uri() . '/scripts.js', array( 'jquery' ));
     }
 ?>

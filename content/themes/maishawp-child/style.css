@@ -987,8 +987,20 @@ body.page-template-staff-page .staff .member {
     height: 50vw;
   }
 }
+body.page-template-staff-page .staff .member .view-bio {
+  color: #4b77be;
+  font-size: 13px;
+}
 body.page-template-staff-page .staff .member .post-thumbnail {
   margin-bottom: 0;
+  overflow: hidden;
+  height: 50vw;
+  background: #2a2c2e;
+}
+@media (min-width: 768px) {
+  body.page-template-staff-page .staff .member .post-thumbnail {
+    height: 20vw;
+  }
 }
 body.page-template-staff-page .staff .member .post-thumbnail img {
   width: 100%;
@@ -1006,7 +1018,6 @@ body.page-template-staff-page .staff .member .content {
   color: #f9f7fa;
   text-align: center;
   opacity: 0;
-  transition: all 0.5s ease;
   cursor: pointer;
   padding: 20px;
 }

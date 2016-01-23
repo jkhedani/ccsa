@@ -1,6 +1,11 @@
 jQuery(document).ready(function($) {
 
     /**
+     * Initialize Popovers
+     */
+     $('[data-toggle="popover"]').popover()
+
+    /**
      * Trigger subscribe container
      */
     $('a[href="#subscribe"]').on('click', function() {

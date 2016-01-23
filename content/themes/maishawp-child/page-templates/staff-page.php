@@ -52,11 +52,12 @@ get_header(); ?>
                     <?php if ( $emailAddress ) : ?>
                         <li><!--i class="fa fa-phone"></i>--> <?php echo $phoneNumber; ?></li>
                     <?php endif; ?>
+                    <a class="view-bio" data-toggle="popover" data-placement="top" title="<?php the_title(); ?>" data-content="<?php echo wp_strip_all_tags( get_the_content() ); ?>">View Bio</a>
                 </ul>
             </div>
-            <div class="content">
+            <!-- <div class="content">
                 <?php the_content(); ?>
-            </div>
+            </div> -->
         </div>
     <?php endwhile; ?>
     <?php wp_reset_postdata(); ?>

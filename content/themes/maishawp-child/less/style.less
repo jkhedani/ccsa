@@ -1013,8 +1013,18 @@ body.page-template-staff-page {
             @media(min-width: 768px) {
                 height: 50vw;
             }
+            .view-bio {
+                color: @colorBlue;
+                font-size: 13px;
+            }
             .post-thumbnail {
                 margin-bottom: 0;
+                overflow: hidden;
+                height: 50vw;
+                background: @colorGrayDarker;
+                @media(min-width: 768px) {
+                    height: 20vw;
+                }
                 img {
                     width: 100%;
                     height: auto;
@@ -1032,13 +1042,8 @@ body.page-template-staff-page {
                 color: @colorWhite;
                 text-align: center;
                 opacity: 0;
-                transition: all 0.5s ease;
                 cursor: pointer;
                 padding: 20px;
-                // &:hover {
-                //     opacity: 1.0;
-                // }
-
             }
             .info {
                 padding: 20px;
