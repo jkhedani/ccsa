@@ -98,18 +98,18 @@
 
 				$categories_list = get_the_category_list( esc_html_x( ', ', 'Used between list items, there is a space after the comma.', 'maisha' ) );
 				if ( $categories_list && maisha_categorized_blog() ) {
-					printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-						esc_html_x( 'Categories', 'Used before category names.', 'maisha' ),
-						$categories_list
-					);
+					// printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+					// 	esc_html_x( 'Categories', 'Used before category names.', 'maisha' ),
+					// 	$categories_list
+					// );
 				}
 
 				$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'Used between list items, there is a space after the comma.', 'maisha' ) );
 				if ( $tags_list ) {
-					printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-						esc_html_x( 'Tags', 'Used before tag names.', 'maisha' ),
-						$tags_list
-					);
+					// printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+					// 	esc_html_x( 'Tags', 'Used before tag names.', 'maisha' ),
+					// 	$tags_list
+					// );
 				}
 			}
 
