@@ -32,7 +32,18 @@
 if ( ! isset( $content_width ) ) {
 	$content_width = 1154;
 }
+
 if ( ! function_exists( 'maisha_setup' ) ) :
+
+	function translate_date_format($format) {
+	    if (function_exists('icl_translate')) {
+	        icl_register_string('Formats', 'Date Format', $format);
+	        $format = icl_translate('Formats', 'Date Format', $format);
+	    }
+	    return $format;
+	}
+	add_filter('option_date_format', 'translate_date_format');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
