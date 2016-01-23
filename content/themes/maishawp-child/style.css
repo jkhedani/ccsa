@@ -315,6 +315,10 @@ button.menu-toggle.anarielgenericon:before {
     text-align: center !important;
   }
 }
+.soliloquy-container .soliloquy-video-icon {
+  opacity: 0.6 !important;
+  background-size: 45px 45px !important;
+}
 .page-template-front-page-one .soliloquy-container h1 {
   color: #f5d151 !important;
   letter-spacing: 0px !important;

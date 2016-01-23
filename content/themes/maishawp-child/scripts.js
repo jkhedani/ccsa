@@ -59,6 +59,27 @@ jQuery(document).ready(function($) {
     });
 
     /**
+     * Use Label to check checkbox
+     */
+    $('input[type="checkbox"] + label').on('click', function() {
+        var checkboxx = $(this).prev();
+        if ( checkboxx.prop('checked') ) {
+            $(this).prev().prop('checked', false);
+            $('body').find('#form-subscribe').hide();
+            $('body').find('.wpcf7').show();
+        } else {
+            $(this).prev().prop('checked', true);
+            $('body').find('#form-subscribe').show();
+            $('body').find('.wpcf7').hide();
+        }
+        // Copy inputs from previous form
+        $('input[name="first-name"]').val($('input[name="q1"]').val());
+        $('input[name="last-name"]').val($('input[name="q2"]').val());
+        $('input[name="your-email"]').val($('input[name="q3"]').val());
+        $('input[name="your-zipcode"]').val($('input[name="q7"]').val());
+    });
+
+    /**
      * Staff Bio
      */
     if ( $('body').hasClass('page-template-staff-page') ) {
