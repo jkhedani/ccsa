@@ -1002,10 +1002,16 @@ body.page-template-staff-page .staff .member {
   height: 80vw;
   margin: 30px 0 0 0;
   position: relative;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   body.page-template-staff-page .staff .member {
-    height: 50vw;
+    height: 40vw;
+  }
+}
+@media (min-width: 991px) {
+  body.page-template-staff-page .staff .member {
+    height: 35vw;
   }
 }
 body.page-template-staff-page .staff .member .view-bio {

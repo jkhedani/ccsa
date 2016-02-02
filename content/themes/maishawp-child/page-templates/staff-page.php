@@ -37,7 +37,7 @@ get_header(); ?>
     ?>
     <div class="staff row">
     <?php while ( $child_pages->have_posts() ) : $child_pages->the_post(); ?>
-        <div class="member col-xs-6 col-sm-3">
+        <div class="member col-xs-6 col-sm-3" data-toggle="popover" data-placement="top" title="<?php the_title(); ?>" data-content="<?php echo wp_strip_all_tags( get_the_content() ); ?>">
             <div class="post-thumbnail"><?php the_post_thumbnail('medium'); ?></div>
             <div class="info">
                 <h1><?php the_title(); ?></h1>
@@ -47,12 +47,12 @@ get_header(); ?>
                 <ul class="contact-info">
                     <li class="title"><?php echo $title; ?></li>
                     <?php if ( $phoneNumber ) : ?>
-                        <li><!-- <i class="fa fa-envelope"></i>--> <?php echo $emailAddress; ?></li>
+                        <li><a href="mailto:<?php echo $emailAddress; ?>"><?php echo $emailAddress; ?></a></li>
                     <?php endif; ?>
                     <?php if ( $emailAddress ) : ?>
                         <li><!--i class="fa fa-phone"></i>--> <?php echo $phoneNumber; ?></li>
                     <?php endif; ?>
-                    <a class="view-bio" data-toggle="popover" data-placement="top" title="<?php the_title(); ?>" data-content="<?php echo wp_strip_all_tags( get_the_content() ); ?>">Read Bio</a>
+                    <!-- <a class="view-bio" data-toggle="popover" data-placement="top" title="<?php the_title(); ?>" data-content="<?php echo wp_strip_all_tags( get_the_content() ); ?>">Read Bio</a> -->
                 </ul>
             </div>
             <!-- <div class="content">
