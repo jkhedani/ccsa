@@ -72,15 +72,16 @@ get_header(); ?>
 
     <?php if( have_rows('three_up_links') ): ?>
     <div class="featured-three-up row">
-
+        <?php $int = 0; ?>
         <?php while ( have_rows('three_up_links') ) : the_row(); ?>
             <div class="member col-sm-4">
                 <div class="content">
                     <i class="fa <?php the_sub_field('font_awesome_icon_class'); ?>"></i>
                     <h1><?php the_sub_field('title'); ?></h1>
-                    <a class="Button" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('blurb'); ?></a>
+                    <a class="Button" href="<?php the_sub_field('link'); ?>" <?php if ($int===1) {?>target="_blank"<?php } ?>><?php the_sub_field('blurb'); ?></a>
                 </div>
             </div>
+            <?php $int++; ?>
         <?php endwhile; ?>
 
     <?php endif; ?>
