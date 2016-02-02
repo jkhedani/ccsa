@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
     /**
      * Initialize Popovers
      */
-     $('[data-toggle="popover"]').popover()
+     $('[data-toggle="popover"]').popover();
 
     /**
      * Trigger subscribe container
@@ -27,6 +27,7 @@ jQuery(document).ready(function($) {
             },500);
             // Slide the site header
             $('.site-header').css('top','0px');
+            $('.site-header').css('position','fixed');
             // Subscribe form
             $('.subscribe-form').css('height','0px');
             $('.subscribe-form').css('padding','0px');
@@ -34,6 +35,7 @@ jQuery(document).ready(function($) {
             $('.subscribe-form').attr('data-state','open');
             // Slide the site header
             $('.site-header').css('top','375px');
+            $('.site-header').css('position','absolute');
             // Subscribe form
             $('.subscribe-form').css('height','375px');
             $('.subscribe-form').css('padding','40px 20%');

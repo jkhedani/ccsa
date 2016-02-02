@@ -15,7 +15,7 @@
 		// Post thumbnail.
 		// maisha_post_thumbnail();
 	?>
-    <a class="post-thumbnail">
+    <a href="<?php the_permalink(); ?>" class="post-thumbnail">
         <?php if ( get_the_post_thumbnail() ) : ?>
         <?php echo the_post_thumbnail(); ?>
         <?php endif; ?>

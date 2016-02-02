@@ -16,11 +16,13 @@ get_header(); ?>
                             <section class="error-404 not-found">
                                 <header class="page-header">
                                     <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'maisha' ); ?></h1>
-                                </header><!-- .page-header -->
+                                    <a href="<?php echo get_home_url(); ?>">Go back to the home page &raquo;</a>
+                                </header>
 
-                                <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'maisha' ); ?></p>
 
-                                <?php get_search_form(); ?>
+                                <!-- <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'maisha' ); ?></p> -->
+
+                                <?php // get_search_form(); ?>
 
                             </section><!-- .error-404 -->
                         </main><!-- .site-main -->

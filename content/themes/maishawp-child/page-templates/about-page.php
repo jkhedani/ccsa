@@ -134,6 +134,7 @@ get_header(); ?>
             <?php $FooterCtaText = get_field('footer_cta_text'); ?>
             <?php $FooterCtaLink = get_field('footer_cta_link'); ?>
             <h2><?php echo $FooterCtaTitle; ?></h2>
+            <hr class="short">
             <p><?php echo $FooterCtaBlurb; ?></p>
             <a href="<?php echo $FooterCtaLink; ?>" class="button wire"><?php echo $FooterCtaText; ?></a>
         </div>
