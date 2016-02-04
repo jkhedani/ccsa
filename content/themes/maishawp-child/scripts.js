@@ -72,12 +72,12 @@ jQuery(document).ready(function($) {
         var checkboxx = $(this).prev();
         if ( checkboxx.prop('checked') ) {
             $(this).prev().prop('checked', false);
-            $('body').find('#form-subscribe').hide();
-            $('body').find('.wpcf7').show();
-        } else {
-            $(this).prev().prop('checked', true);
             $('body').find('#form-subscribe').show();
             $('body').find('.wpcf7').hide();
+        } else {
+            $(this).prev().prop('checked', true);
+            $('body').find('#form-subscribe').hide();
+            $('body').find('.wpcf7').show();
         }
         // Copy inputs from previous form
         $('input[name="first-name"]').val($('input[name="q1"]').val());
