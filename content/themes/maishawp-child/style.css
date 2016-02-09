@@ -105,6 +105,7 @@ header#masthead {
   color: #f9f7fa;
   border-radius: 0;
   max-width: none;
+  margin: 0 !important;
   background: rgba(42, 44, 46, 0.7);
 }
 .popover .arrow {
@@ -113,6 +114,7 @@ header#masthead {
 .popover .popover-content {
   padding: 34px 24px;
   overflow: scroll;
+  height: 100%;
 }
 .popover .popover-title {
   display: none;
