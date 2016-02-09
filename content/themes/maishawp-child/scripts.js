@@ -3,7 +3,22 @@ jQuery(document).ready(function($) {
     /**
      * Initialize Popovers
      */
-     $('[data-toggle="popover"]').popover();
+    $('[data-toggle="popover"]').popover();
+    // http://stackoverflow.com/questions/11703093/how-to-dismiss-a-twitter-bootstrap-popover-by-clicking-outside
+    $('body').on('click', function (e) {
+        //only buttons
+        if ($(e.target).data('toggle') !== 'popover' && $(e.target).parents('.popover.in').length === 0) {
+            $('[data-toggle="popover"]').popover('hide');
+        }
+        //buttons and icons within buttons
+        /*
+        if ($(e.target).data('toggle') !== 'popover'
+            && $(e.target).parents('[data-toggle="popover"]').length === 0
+            && $(e.target).parents('.popover.in').length === 0) {
+            $('[data-toggle="popover"]').popover('hide');
+        }
+        */
+    });
 
     /**
      * Trigger subscribe container

@@ -81,6 +81,7 @@ header#masthead {
   margin: 0 auto;
   background: #f9f7fa;
   padding-top: 22px;
+  z-index: 9999999;
 }
 .headerblock {
   background: #f9f7fa;
@@ -90,6 +91,31 @@ header#masthead {
 }
 #site > div .cd-fixed-bg-one {
   padding: 180px;
+}
+/**
+ * Popovers
+ */
+.popover {
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  padding: 0;
+  border: none;
+  color: #f9f7fa;
+  border-radius: 0;
+  max-width: none;
+  background: rgba(42, 44, 46, 0.7);
+}
+.popover .arrow {
+  display: none;
+}
+.popover .popover-content {
+  padding: 34px 24px;
+  overflow: scroll;
+}
+.popover .popover-title {
+  display: none;
 }
 /**
  * Typography
@@ -926,6 +952,7 @@ body.blog.paged .featured-posts {
 }
 body.blog .grid-post .entry-footer {
   margin: -20px 0 30px 0;
+  font-size: 1.0rem;
 }
 @media screen and (max-width: 59.6875em) {
   body.blog .post .entry-footer {
@@ -934,7 +961,7 @@ body.blog .grid-post .entry-footer {
 }
 @media screen and (min-width: 955px) {
   body.blog .grid-post .entry-header {
-    height: 120px;
+    min-height: 90px;
   }
   body.blog .grid-post .entry-content {
     height: 120px;
@@ -1002,7 +1029,6 @@ body.page-template-staff-page .staff .member {
   height: 80vw;
   margin: 30px 0 0 0;
   position: relative;
-  cursor: pointer;
 }
 @media (min-width: 768px) {
   body.page-template-staff-page .staff .member {
@@ -1017,8 +1043,10 @@ body.page-template-staff-page .staff .member {
 body.page-template-staff-page .staff .member .view-bio {
   color: #4b77be;
   font-size: 13px;
+  cursor: pointer;
 }
 body.page-template-staff-page .staff .member .post-thumbnail {
+  position: relative;
   margin-bottom: 0;
   overflow: hidden;
   height: 50vw;
@@ -1074,10 +1102,17 @@ body.error404 .page-header {
   padding: 40px 0;
   border: none;
 }
+@media (min-width: 768px) {
+  body.error404 .page-header {
+    padding: 140px 0;
+  }
+}
 body.error404 .page-header h1.page-title {
-  font-size: 5.5vw;
+  font-size: 30px;
 }
 body.error404 .page-header a {
+  clear: left;
+  display: block;
   color: #4b77be;
 }
 /**

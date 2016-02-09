@@ -79,8 +79,8 @@ get_header(); ?>
                     <i class="fa <?php the_sub_field('font_awesome_icon_class'); ?>"></i>
                     <h1><?php the_sub_field('title'); ?></h1>
                     <?php if ( $int === 1 ) : ?>
-                        <a class="Button floatbox" data-fb-options="width:618 height:max scrolling:yes" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('blurb'); ?></a>
-                        <script type="text/javascript" src="https://register2.rockthevote.com/widget_loader.js"></script>
+                        <a class="Button floatbox" data-fb-options="width:618 height:max scrolling:yes" target="_blank" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('blurb'); ?></a>
+                        <!-- <script type="text/javascript" src="https://register2.rockthevote.com/widget_loader.js"></script> -->
                     <?php else: ?>
                         <a class="Button" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('blurb'); ?></a>
                     <?php endif; ?>
