@@ -39,7 +39,7 @@ get_header(); ?>
     <?php while ( $child_pages->have_posts() ) : $child_pages->the_post(); ?>
         <div class="member col-xs-12 col-sm-3">
         <!-- <div class="member col-xs-6 col-sm-3" data-toggle="popover" data-placement="top" title="<?php the_title(); ?>" data-content="<?php echo wp_strip_all_tags( get_the_content() ); ?>"> -->
-            <div class="post-thumbnail <?php echo $post->ID;?>-member-info"><?php the_post_thumbnail('medium'); ?></div>
+            <div class="post-thumbnail <?php echo $post->ID;?>-member-info"><?php the_post_thumbnail('large'); ?></div>
             <div class="info">
                 <h1><?php the_title(); ?></h1>
                 <?php $title = get_field('title'); ?>
