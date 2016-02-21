@@ -27,7 +27,7 @@
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			else :
 				$ellipses = "";
-				$title = get_the_excerpt();
+				$title = get_the_title();
 				if ( strlen($title) >= 125 ) {
 					$ellipses = "...";
 				}
