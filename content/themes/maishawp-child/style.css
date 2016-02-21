@@ -952,6 +952,9 @@ body.blog {
 body.blog.paged .featured-posts {
   display: none;
 }
+body.blog .grid-post .entry-content {
+  font-size: 1.5rem;
+}
 body.blog .grid-post .entry-header .entry-title {
   font-size: 2.2rem;
 }

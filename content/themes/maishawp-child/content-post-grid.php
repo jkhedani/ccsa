@@ -27,12 +27,15 @@
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			else :
 				$ellipses = "";
-				$title = get_the_title();
-				$string = preg_replace('/\s+?(\S+)?$/', '', substr($title , 0, 92));
-				$before = sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) );
-				if ( strlen($title) >= 90 ) {
+				$title = get_the_excerpt();
+				if ( strlen($title) >= 125 ) {
 					$ellipses = "...";
 				}
+				$string = $title;
+				if (preg_match('/^.{1,125}\s/su', $title, $match)) {
+					$string = $match[0];
+				}
+				$before = sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) );
 				echo $before . $title . $ellipses . '</a></h2>';
 
 			endif;
@@ -46,9 +49,12 @@
 			/* translators: %s: Name of current post */
 			$ellipses = "";
 			$excerpt = get_the_excerpt();
-			$string = preg_replace('/\s+?(\S+)?$/', '', substr($excerpt, 0, 125));
 			if ( strlen($excerpt) >= 125 ) {
 				$ellipses = "...";
+			}
+			$string = $excerpt;
+			if (preg_match('/^.{1,125}\s/su', $excerpt, $match)) {
+				$string = $match[0];
 			}
 			echo $string . $ellipses;
 

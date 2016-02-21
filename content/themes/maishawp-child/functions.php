@@ -15,4 +15,9 @@
         wp_enqueue_script( 'bootstrap-tooltips', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ));
         wp_enqueue_script( 'theme-script', get_stylesheet_directory_uri() . '/scripts.js', array( 'jquery' ));
     }
+
+    // function custom_excerpt_length( $length ) {
+    // 	return 125;
+    // }
+    // add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 ?>
