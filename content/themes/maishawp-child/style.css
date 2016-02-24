@@ -953,7 +953,7 @@ body.blog.paged .featured-posts {
   display: none;
 }
 body.blog .grid-post .entry-content {
-  font-size: 1.5rem;
+  font-size: 1.43rem;
 }
 body.blog .grid-post .entry-header .entry-title {
   font-size: 2.2rem;
@@ -968,7 +968,7 @@ body.blog .grid-post .entry-footer {
 }
 @media screen and (min-width: 955px) {
   body.blog .grid-post .entry-header {
-    height: 125px;
+    height: 123px;
     overflow: hidden;
   }
   body.blog .grid-post .entry-content {
