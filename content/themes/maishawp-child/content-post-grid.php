@@ -28,13 +28,15 @@
 			else :
 				$ellipses = "";
 				$title = get_the_title();
+				$string = $title;
+				
 				if ( strlen($title) >= 125 ) {
 					$ellipses = "...";
+					if (preg_match('/^.{1,125}\s/su', $title, $match)) {
+						$string = $match[0];
+					}
 				}
-				$string = $title;
-				if (preg_match('/^.{1,125}\s/su', $title, $match)) {
-					$string = $match[0];
-				}
+
 				$before = sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) );
 				echo $before . $title . $ellipses . '</a></h2>';
 
@@ -49,13 +51,16 @@
 			/* translators: %s: Name of current post */
 			$ellipses = "";
 			$excerpt = get_the_excerpt();
+			$string = $excerpt;
+
 			if ( strlen($excerpt) >= 125 ) {
 				$ellipses = "...";
+				if (preg_match('/^.{1,125}\s/su', $excerpt, $match)) {
+					$string = $match[0];
+				}
 			}
-			$string = $excerpt;
-			if (preg_match('/^.{1,125}\s/su', $excerpt, $match)) {
-				$string = $match[0];
-			}
+
+			// echo strlen($excerpt);
 			echo $string . $ellipses;
 
 			wp_link_pages( array(
